@@ -13,6 +13,14 @@
   animation: float 6s ease-in-out infinite;
 }
 
+.dancing_script {
+  font-family: "Dancing Script", cursive;
+}
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+
 
 @custom-variant dark (&:is(.dark *));
 

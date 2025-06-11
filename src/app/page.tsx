@@ -17,7 +17,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
             {/* Contenu à gauche */}
             <div className="flex flex-col gap-6 lg:gap-8 text-center lg:text-left">
-              <h1 className="text-[#FF69B4] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              <h1 className="dancing_script text-[#FF69B4] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                 Des douceurs qui rendent heureux
               </h1>
               <p className="text-[#8B4513] text-base sm:text-lg lg:text-xl leading-relaxed max-w-md mx-auto lg:mx-0">
@@ -58,7 +58,7 @@ export default function Home() {
 
         {/* Section spécialités */}
         <section className="container mx-auto px-4 py-10 lg:py-20">
-          <h2 className="text-[#FF69B4] text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center">
+          <h2 className="dancing_script text-[#FF69B4] text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center">
             Nos spécialités
           </h2>
           <aside className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-center max-w-6xl mx-auto py-16">
@@ -73,7 +73,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <h3 className="text-lg font-semibold text-[#FF69B4]">Gâteaux</h3>
+              <h3 className="dancing_script text-lg font-semibold text-[#FF69B4]">Gâteaux</h3>
               <p className="text-[#8B4513]">Anniversaires, célébrations ou plaisir personnel</p>
             </div>
 
@@ -88,7 +88,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <h3 className="text-lg font-semibold text-[#FF69B4]">Cupcakes</h3>
+              <h3 className="dancing_script text-lg font-semibold text-[#FF69B4]">Cupcakes</h3>
               <p className="text-[#8B4513]">Mignons et délicieux, parfaits pour toute occasion</p>
             </div>
 
@@ -103,7 +103,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <h3 className="text-lg font-semibold text-[#FF69B4]">Macarons</h3>
+              <h3 className="dancing_script text-lg font-semibold text-[#FF69B4]">Macarons</h3>
               <p className="text-[#8B4513]">L'élégance française dans chaque bouchée</p>
             </div>
 
@@ -118,7 +118,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <h3 className="text-lg font-semibold text-[#FF69B4]">Tartes</h3>
+              <h3 className="dancing_script text-lg font-semibold text-[#FF69B4]">Tartes</h3>
               <p className="text-[#8B4513]">Fruits de saison et créations gourmandes</p>
             </div>
           </aside>
@@ -127,7 +127,7 @@ export default function Home() {
         {/* Section Nos Best-Sellers */}
         <section className="bg-white">
           <div className="container mx-auto px-4 py-4 lg:py-20">
-            <h2 className="text-[#FF69B4] text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center">
+            <h2 className="dancing_script text-[#FF69B4] text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center">
               Nos Best-Sellers
             </h2>
             <aside className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-center max-w-6xl mx-auto py-16">
@@ -142,7 +142,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-lg font-semibold text-[#FF69B4]">Fraisier Royal</h3>
+                  <h3 className="dancing_script text-lg font-semibold text-[#FF69B4]">Fraisier Royal</h3>
                   <span className="text-[#8B4513]">32,90 €</span>
                   <div className="flex justify-between items-center ">
                     <Button className="bg-[#FF69B4]">Ajouter au panier</Button>
@@ -163,7 +163,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-lg font-semibold text-[#FF69B4]">Opéra Chocolat</h3>
+                  <h3 className="dancing_script text-lg font-semibold text-[#FF69B4]">Opéra Chocolat</h3>
                   <span className="text-[#8B4513]">28,50 €</span>
                   <div className="flex justify-between items-center ">
                     <Button className="bg-[#FF69B4]">Ajouter au panier</Button>
@@ -184,7 +184,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-lg font-semibold text-[#FF69B4]">Cupcakes Rainbow</h3>
+                  <h3 className="dancing_script text-lg font-semibold text-[#FF69B4]">Cupcakes Rainbow</h3>
                   <span className="text-[#8B4513]">24,90 €</span>
                   <div className="flex justify-between items-center ">
                     <Button className="bg-[#FF69B4]">Ajouter au panier</Button>
@@ -200,23 +200,23 @@ export default function Home() {
 
         {/* Section Ce que disent nos clients */}
         <section className="container mx-auto px-4 py-4 lg:py-20">
-          <h2 className="text-[#FF69B4] text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center">
+          <h2 className="dancing_script text-[#FF69B4] text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-center">
             Ce que disent nos clients
           </h2>
           <aside className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-center max-w-6xl mx-auto py-16">
             <div className="bg-white p-10 rounded-2xl text-center flex flex-col gap-2">
               <h3>⭐⭐⭐⭐⭐</h3>
-              <p className="text-[#8B4513]">"Absolument délicieux ! Le gâteau d'anniversaire était parfait, mes invités n'arrêtaient pas de me demander où je l'avais trouvé !"</p>
+              <p className="text-[#8B4513] italic">"Absolument délicieux ! Le gâteau d'anniversaire était parfait, mes invités n'arrêtaient pas de me demander où je l'avais trouvé !"</p>
               <span className="text-[#FF69B4]">- Marie L.</span>
             </div>
             <div className="bg-white p-10 rounded-2xl text-center flex flex-col gap-2">
               <h3>⭐⭐⭐⭐⭐</h3>
-              <p className="text-[#8B4513]">"Livraison rapide, emballage soigné et saveurs exceptionnelles. Je recommande vivement Croq'Dya !"</p>
+              <p className="text-[#8B4513] italic">"Livraison rapide, emballage soigné et saveurs exceptionnelles. Je recommande vivement Croq'Dya !"</p>
               <span className="text-[#FF69B4]">- Thomas B.</span>
             </div>
             <div className="bg-white p-10 rounded-2xl text-center flex flex-col gap-2">
               <h3>⭐⭐⭐⭐⭐</h3>
-              <p className="text-[#8B4513]">"Les macarons sont un rêve ! Chaque parfum est une explosion de goût. Bravo aux pâtissiers !"</p>
+              <p className="text-[#8B4513] italic">"Les macarons sont un rêve ! Chaque parfum est une explosion de goût. Bravo aux pâtissiers !"</p>
               <span className="text-[#FF69B4]">- Sophie M.</span>
             </div>
           </aside>

@@ -67,34 +67,34 @@ export default function Navbar() {
             <div className='px-4 py-4 space-y-4'>
               <Link 
                 href={"/menu"} 
-                className='block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
+                className='quicksand block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
                 onClick={() => setIsMenuOpen(false)}
               >
                 Menu
               </Link>
               <Link 
                 href={"/commander"} 
-                className='block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
+                className='quicksand block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
                 onClick={() => setIsMenuOpen(false)}
               >
                 Commander
               </Link>
               <Link 
                 href={"/a-propos"} 
-                className='block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
+                className='quicksand block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
                 onClick={() => setIsMenuOpen(false)}
               >
                 À propos
               </Link>
               <Link 
                 href={"/contact"} 
-                className='block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
+                className='quicksand block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
               <div className='pt-4 border-t'>
-                <Button className='w-full bg-white text-pink-600 border border-pink-600 rounded-full hover:bg-pink-50 transition-colors cursor-pointer'>
+                <Button className='w-full quicksand bg-white text-pink-600 border border-pink-600 rounded-full hover:bg-pink-50 transition-colors cursor-pointer'>
                   Connexion
                 </Button>
               </div>

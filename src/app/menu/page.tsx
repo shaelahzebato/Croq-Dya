@@ -82,7 +82,7 @@ export default function MenuPage() {
     <main className="min-h-screen bg-[#FFF8DC]">
       {/* Barre de recherche stylée */}
       <section className="px-6 py-14 flex flex-col gap-8 items-center text-center max-w-4xl mx-auto">
-        <h1 className="text-[#FF69B4] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+        <h1 className="text-[#FF69B4] dancing_script text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
           Notre Menu Gourmand
         </h1>
         <p className="text-[#8B4513] text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl">
@@ -107,7 +107,7 @@ export default function MenuPage() {
 
       {Object.entries(desserts).map(([category, data]: [string, { name: string; image: string; description: string }[]]) => (
         <section key={category} className="px-6 py-14 max-w-6xl mx-auto">
-          <h2 className="text-[#8B4513] text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10">
+          <h2 className="text-[#8B4513] dancing_script text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10">
             {category === "gateaux"
               ? "🎂 Gâteaux"
               : category === "cupcakes"
@@ -134,7 +134,7 @@ export default function MenuPage() {
                     className="object-cover rounded-full"
                   />
                 </div>
-                <h3 className="text-[#FF69B4] text-xl font-semibold mb-2">{dessert.name}</h3>
+                <h3 className="text-[#FF69B4] dancing_script text-xl font-semibold mb-2">{dessert.name}</h3>
                 <p className="text-[#8B4513] text-sm lg:text-base leading-relaxed">
                   {dessert.description}
                 </p>
