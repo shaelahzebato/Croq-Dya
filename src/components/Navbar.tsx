@@ -13,7 +13,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className='bg-white/95 backdrop-blur-sm shadow-md sticky top-0 z-50'>
+    <header className='bg-white/95 backdrop-blur-sm shadow-lg shadow-pink-200/50 sticky top-0 z-50'>
       <nav className='max-w-7xl mx-auto flex justify-between items-center px-4 py-3 md:px-6'>
         {/* Logo */}
         <Link href={"/"} className="flex-shrink-0">
@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* Menu mobile - dropdown */}
         {isMenuOpen && (
-          <div className='absolute top-full left-0 right-0 bg-white shadow-lg border-t md:hidden'>
+          <div className='absolute top-full left-0 right-0 bg-white shadow-lg shadow-pink-200/30 border-t md:hidden'>
             <div className='px-4 py-4 space-y-4'>
               <Link 
                 href={"/menu"} 
