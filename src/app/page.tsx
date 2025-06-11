@@ -53,9 +53,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className=""></section>
       </main>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           25% { transform: translateY(-10px) rotate(1deg); }
@@ -66,7 +68,7 @@ export default function Home() {
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
-      `}</style>
+      `}</style> */}
     </>
   );
 }
