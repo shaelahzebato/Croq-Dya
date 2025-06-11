@@ -10,8 +10,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Navbar />
-
+      {/* <Navbar /> */}
       <main className="min-h-screen bg-[#FFF8DC]">
         {/* Section héro */}
         <section className="container mx-auto px-4 py-10 lg:py-20">
@@ -223,7 +222,7 @@ export default function Home() {
           </aside>
         </section>  
       </main>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }

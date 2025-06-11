@@ -15,7 +15,7 @@ export default function Footer() {
                 <Link href={"/"}>Contact</Link>
             </li>
         </ul>
-        <p className='text-[#fff6f0] text-center'>© 2025 Croq'Dya. Pâtisserie artisanale avec amour 💝</p>
+        <p className='text-[#fff6f0] text-center'>© 2025 Croq'Dya. Pâtisserie artisanale avec amour💗.</p>
     </section>
   )
 }

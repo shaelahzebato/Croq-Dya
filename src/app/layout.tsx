@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Quicksand } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const dancingScript = Dancing_Script({
   variable: "--font-dancing-script",
@@ -48,7 +50,9 @@ export default function RootLayout({
       </head>
       <body className={`${dancingScript.variable} ${quicksand.variable} font-quicksand bg-gradient-to-br from-cream via-blanc-casse to-vanille text-chocolat antialiased min-h-screen`}>
         <div className="croqdya-layout">
-          {children}
+          <Navbar/>
+            {children}
+          <Footer/>
         </div>
       </body>
     </html>

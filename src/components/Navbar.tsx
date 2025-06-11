@@ -29,6 +29,9 @@ export default function Navbar() {
             <Link href={"/commander"}>Commander</Link>
           </li>
           <li className="hover:text-pink-600 transition-colors">
+            <Link href={"/a-propos"}>À propos</Link>
+          </li>
+          <li className="hover:text-pink-600 transition-colors">
             <Link href={"/contact"}>Contact</Link>
           </li>
         </ul>
@@ -75,6 +78,13 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Commander
+              </Link>
+              <Link 
+                href={"/a-propos"} 
+                className='block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                À propos
               </Link>
               <Link 
                 href={"/contact"} 
