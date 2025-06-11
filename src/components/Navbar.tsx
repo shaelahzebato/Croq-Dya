@@ -39,7 +39,7 @@ export default function Navbar() {
             <ShoppingBag className='w-5 h-5 text-[#8B4513] group-hover:text-pink-600 transition-colors'/>
             <span className='absolute -top-2 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold'>3</span>
           </Link>
-          <Button className='bg-white text-pink-600 border border-pink-600 rounded-full px-6 hover:bg-pink-50 hover:scale-105 transition-all'>
+          <Button className='bg-white text-pink-600 border border-pink-600 rounded-full px-6 hover:bg-pink-50 hover:scale-105 transition- cursor-pointer'>
             Connexion
           </Button>
         </div>
@@ -52,7 +52,7 @@ export default function Navbar() {
           </Link>
           <button
             onClick={toggleMenu}
-            className='p-2 text-[#8B4513] hover:text-pink-600 transition-colors'
+            className='p-2 text-[#8B4513] hover:text-pink-600 transition-colors cursor-pointer'
           >
             {isMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
           </button>
@@ -84,7 +84,7 @@ export default function Navbar() {
                 Contact
               </Link>
               <div className='pt-4 border-t'>
-                <Button className='w-full bg-white text-pink-600 border border-pink-600 rounded-full hover:bg-pink-50 transition-colors'>
+                <Button className='w-full bg-white text-pink-600 border border-pink-600 rounded-full hover:bg-pink-50 transition-colors cursor-pointer'>
                   Connexion
                 </Button>
               </div>
