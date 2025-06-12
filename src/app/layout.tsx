@@ -48,7 +48,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="theme-color" content="#FF69B4" />
       </head>
-      <body className={`${dancingScript.variable} ${quicksand.variable} font-quicksand bg-gradient-to-br from-cream via-blanc-casse to-vanille text-chocolat antialiased min-h-screen`}>
+      <body className={`${dancingScript.variable} ${quicksand.variable} font-quicksand quicksand-light bg-gradient-to-br from-cream via-blanc-casse to-vanille text-chocolat antialiased min-h-screen`}>
         <div className="croqdya-layout">
           <Navbar/>
             {children}

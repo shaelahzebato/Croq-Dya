@@ -1,7 +1,9 @@
 import React from "react";
-import { Search } from "lucide-react";
+import { AlarmClock, Eye, Heart, Package, Search } from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const desserts: Record<string, { name: string; image: string; description: string }[]> = {
   gateaux: [
@@ -80,17 +82,17 @@ const desserts: Record<string, { name: string; image: string; description: strin
 export default function MenuPage() {
   return (
     <main className="min-h-screen bg-[#FFF8DC]">
-      {/* Barre de recherche stylée */}
       <section className="px-6 py-14 flex flex-col gap-8 items-center text-center max-w-4xl mx-auto">
-        <h1 className="text-[#FF69B4] dancing_script text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+        <h1 className="text-[#FF69B4] dancing_script text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
           Notre Menu Gourmand
         </h1>
-        <p className="text-[#8B4513] text-base sm:text-lg lg:text-xl leading-relaxed w-full max-w-3xl">
+        <p className="text-[#8B4513] text-base sm:text-xl lg:text-2xl leading-relaxed w-full max-w-3xl">
           Découvrez toutes nos créations artisanales faites avec amour et des ingrédients de qualité. Gâteaux, cupcakes, tartes et autres douceurs pour ravir vos papilles !
         </p>
       </section>
 
-      <section className="">
+      {/* Barre de recherche stylée */}
+      {/* <section className="">
         <Card className="p-10 max-w-5xl mx-auto">
           <div className="w-full flex items-center gap-4 bg-white p-4 rounded-full border-2 border-[#FF69B4] shadow-sm focus-within:ring-2 ring-[#FF69B4]">
             <Search className="text-[#FF69B4] w-5 h-5" />
@@ -103,11 +105,50 @@ export default function MenuPage() {
           </div>
           <h2 className="text-[#FF69B4] text-lg sm:text-xl lg:text-2xl font-bold text-center">Trouver votre douceur idéale</h2>
         </Card>
-      </section>
+      </section> */}
+      {/* Barre de recherche améliorée */}
+      <section className="px-6 mb-16">
+      <Card className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur-sm border-2 shadow-xl searchbar-card">
+        <div className="text-center mb-6">
+          <h2 className="font-dancing text-2xl sm:text-3xl font-bold mb-2 text-primary">
+            Trouvez votre douceur idéale
+          </h2>
+          <p className="text-sm text-secondary">
+            Plus de 50 créations artisanales vous attendent
+          </p>
+        </div>
+        
+        <div className="relative">
+          <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border-2 shadow-lg transition-all duration-300 searchbar-input">
+            <Search className="w-6 h-6 flex-shrink-0 text-primary" />
+            <input
+              type="search"
+              placeholder="Rechercher un dessert, un parfum, une occasion..."
+              className="w-full text-sm sm:text-base outline-none font-quicksand text-secondary placeholder-accent"
+            />
+            <Button className="btn btn-primary px-6 py-2 rounded-xl">
+              Rechercher
+            </Button>
+          </div>
+          
+          {/* Tags populaires */}
+          <div className="flex flex-wrap gap-2 mt-4 justify-center">
+            {["Chocolat", "Fraise", "Vanille", "Sans gluten", "Vegan"].map((tag) => (
+              <span 
+                key={tag} 
+                className="search-tag px-3 py-1 text-white text-xs rounded-full cursor-pointer transition-colors"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Card>
+    </section>
 
       {Object.entries(desserts).map(([category, data]: [string, { name: string; image: string; description: string }[]]) => (
         <section key={category} className="px-6 py-14 max-w-6xl mx-auto">
-          <h2 className="text-[#8B4513] dancing_script text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-10">
+          <h2 className="text-[#8B4513] dancing_script text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10">
             {category === "gateaux"
               ? "🎂 Gâteaux"
               : category === "cupcakes"
@@ -138,6 +179,29 @@ export default function MenuPage() {
                 <p className="text-[#8B4513] text-sm lg:text-base leading-relaxed">
                   {dessert.description}
                 </p>
+                <div className="flex items-center gap-6 text-[#8B4513] mt-6">
+                  <div className="flex items-center gap-1">
+                    <span className="text-[#FF69B4]"><AlarmClock/></span>
+                    <span>2h</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="text-[#FF69B4]"><Package/></span>
+                    <span>Écrin de 12</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span>⭐</span>
+                    <span>4.5</span>
+                  </div>
+                </div>
+                <span className="text-[#FF69B4] text-xl py-2">32,90 €</span>
+                <div className="w-full flex justify-between items-center mt-6">
+                    <Button className="bg-[#FF69B4] cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Ajouter au panier</Button>
+                    <Link href={"/"}>
+                      <Button className="bg-white text-[#FF69B4] border border-[#FF69B4] hover:bg-pink-100 cursor-pointer transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <Eye/>
+                      </Button>
+                    </Link>
+                  </div>
               </div>
             ))}
           </div>

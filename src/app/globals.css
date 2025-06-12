@@ -17,9 +17,92 @@
   font-family: "Dancing Script", cursive;
 }
 
+/* Classes Quicksand avec différents poids */
 .quicksand {
   font-family: "Quicksand", sans-serif;
+  font-weight: 400; /* Plus léger que 600 */
 }
+
+.quicksand-light {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300; /* Très léger */
+}
+
+.quicksand-normal {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400; /* Normal */
+}
+
+.quicksand-medium {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500; /* Légèrement plus épais */
+}
+
+.quicksand-semibold {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600; /* Semi-gras */
+}
+
+/* Classe globale pour body ou éléments principaux */
+body.quicksand-light {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+}
+
+/* Utilitaires pour Tailwind */
+.font-quicksand-light {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+}
+
+.font-quicksand-normal {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+
+.font-quicksand-medium {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
+
+/* Classes pour la barre de recherche */
+.text-primary {
+  color: var(--rose-bonbon);
+}
+
+.text-secondary {
+  color: var(--chocolat);
+  opacity: 0.7;
+}
+
+.text-accent {
+  color: var(--fraise);
+}
+
+.placeholder-accent::placeholder {
+  color: var(--rose-bonbon);
+  opacity: 0.5;
+}
+
+.searchbar-card {
+  border-color: var(--rose-bonbon);
+}
+
+.searchbar-input {
+  border-color: var(--rose-bonbon);
+}
+
+.searchbar-input:focus-within {
+  border-color: var(--rose-bonbon);
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+}
+
+.search-tag {
+  background-color: var(--rose-bonbon);
+  color: var(--rose-bonbon);
+}
+
 
 
 @custom-variant dark (&:is(.dark *));
@@ -65,6 +148,13 @@
 }
 
 :root {
+  --rose-bonbon: #FF69B4;
+  --cream: #FFF8DC;
+  --chocolat: #8B4513;
+  --vanille: #F3E5AB;
+  --fraise: #FFB6C1;
+  --or-rose: #E8B4B8;
+  --blanc-casse: #FEFEFE;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
@@ -133,6 +223,22 @@
   --sidebar-ring: oklch(0.553 0.013 58.071);
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--rose-bonbon), var(--fraise));
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--rose-bonbon);
+  border: 2px solid var(--rose-bonbon);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -141,3 +247,144 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+
+/**
+//Couleurs Croq'Dya en plus du système existant
+    colors: {
+        'rose-bonbon': '
+      #FF69B4',
+              'cream': '
+      #FFF8DC',
+              'chocolat': '
+      #8B4513',
+              'vanille': '
+      #F3E5AB',
+              'fraise': '
+      #FFB6C1',
+              'or-rose': '
+      #E8B4B8',
+              'blanc-casse': '
+      #FEFEFE',
+              'violet-doux': '
+      #DDA0DD',
+              'peche': '
+      #FFCBA4',
+              'croqdya': {
+                50: '
+      #fef7f7',
+                100: '
+      #feecec',
+                200: '
+      #fdd8df',
+                300: '
+      #fbb6c8',
+                400: '
+      #f786a7',
+                500: '
+      #FF69B4', // rose-bonbon principal
+                600: '
+      #e11d48',
+                700: '
+      #be123c',
+                800: '
+      #9f1239',
+                900: '
+      #881337',
+                950: '
+      #4c0519',
+              },
+      },
+
+      // Polices Croq'Dya
+      fontFamily: {
+        'dancing': ['var(--font-dancing-script)', 'cursive'],
+        'quicksand': ['var(--font-quicksand)', 'sans-serif'],
+      },
+
+      // Box shadows Croq'Dya
+      boxShadow: {
+        'croqdya': '0 10px 30px rgba(255, 105, 180, 0.1)',
+        'croqdya-hover': '0 20px 40px rgba(255, 105, 180, 0.2)',
+        'croqdya-active': '0 5px 15px rgba(255, 105, 180, 0.3)',
+      },
+
+      // Animations personnalisées
+      animation: {
+        'float': 'float 3s ease-in-out infinite',
+        'bounce-soft': 'bounce-soft 2s infinite',
+        'pulse-glow': 'pulse-glow 2s infinite',
+      },
+
+      // Keyframes
+      keyframes: {
+        float: {
+          '0%, 100%': { 
+            transform: 'translateY(0px) rotate(0deg)' 
+          },
+          '50%': { 
+            transform: 'translateY(-10px) rotate(2deg)' 
+          },
+        },
+        'bounce-soft': {
+          '0%, 20%, 50%, 80%, 100%': { 
+            transform: 'translateY(0)' 
+          },
+          '40%': { 
+            transform: 'translateY(-10px)' 
+          },
+          '60%': { 
+            transform: 'translateY(-5px)' 
+          },
+        },
+        'pulse-glow': {
+          '0%': { 
+            boxShadow: '0 0 0 0 rgba(255, 105, 180, 0.7)' 
+          },
+          '70%': { 
+            boxShadow: '0 0 0 10px rgba(255, 105, 180, 0)' 
+          },
+          '100%': { 
+            boxShadow: '0 0 0 0 rgba(255, 105, 180, 0)' 
+          },
+        },
+      },
+
+      // Backdrop blur
+      backdropBlur: {
+        'glass': '20px',
+      },
+
+      // Spacing personnalisé
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+      },
+    },
+  },
+  darkMode: 'class',
+  plugins: [
+    // Plugin pour les utilities personnalisées Croq'Dya
+    function({ addUtilities }: { addUtilities: any }) {
+      const newUtilities = {
+        '.glass-croqdya': {
+          background: 'rgba(255, 255, 255, 0.9)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 105, 180, 0.1)',
+        },
+        '.text-gradient-croqdya': {
+          background: 'linear-gradient(45deg, #FF69B4, #DDA0DD)',
+          '-webkit-background-clip': 'text',
+          'background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
+};
+
+export default config;
+**/
