@@ -145,10 +145,12 @@ export default function Home() {
                   <h3 className="dancing_script text-xl font-semibold text-[#FF69B4]">Fraisier Royal</h3>
                   <span className="text-[#8B4513]">32,90 €</span>
                   <div className="flex justify-between items-center ">
-                    <Button className="bg-[#FF69B4]">Ajouter au panier</Button>
-                    <Button className="bg-white text-[#FF69B4] border border-[#FF69B4]">
-                      <Heart/>
-                    </Button>
+                    <Button className="bg-[#FF69B4] cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Ajouter au panier</Button>
+                    <Link href={"/"}>
+                      <Button className="bg-white text-[#FF69B4] border border-[#FF69B4] hover:bg-pink-100 cursor-pointer transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <Heart/>
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -166,10 +168,12 @@ export default function Home() {
                   <h3 className="dancing_script text-xl font-semibold text-[#FF69B4]">Opéra Chocolat</h3>
                   <span className="text-[#8B4513]">28,50 €</span>
                   <div className="flex justify-between items-center ">
-                    <Button className="bg-[#FF69B4] cursor-pointer">Ajouter au panier</Button>
-                    <Button className="bg-white text-[#FF69B4] border border-[#FF69B4] cursor-pointer">
-                      <Heart/>
-                    </Button>
+                    <Button className="bg-[#FF69B4] cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Ajouter au panier</Button>
+                    <Link href={"/"}>
+                      <Button className="bg-white text-[#FF69B4] border border-[#FF69B4] hover:bg-pink-100 cursor-pointer transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <Heart/>
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -187,10 +191,12 @@ export default function Home() {
                   <h3 className="dancing_script text-xl font-semibold text-[#FF69B4]">Cupcakes Rainbow</h3>
                   <span className="text-[#8B4513]">24,90 €</span>
                   <div className="flex justify-between items-center ">
-                    <Button className="bg-[#FF69B4]">Ajouter au panier</Button>
-                    <Button className="bg-white text-[#FF69B4] border border-[#FF69B4]">
-                      <Heart/>
-                    </Button>
+                    <Button className="bg-[#FF69B4] cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Ajouter au panier</Button>
+                    <Link href={"/"}>
+                      <Button className="bg-white text-[#FF69B4] border border-[#FF69B4] hover:bg-pink-100 cursor-pointer transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <Heart/>
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>

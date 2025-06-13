@@ -17,6 +17,11 @@
   font-family: "Dancing Script", cursive;
 }
 
+.about-card {
+  /* color: linear-gradient(45deg, var(--rose-bonbon), var(--violet-doux)); */
+  background: linear-gradient(45deg, var(--rose-bonbon), var(--violet-doux));
+}
+
 /* Classes Quicksand avec différents poids */
 .quicksand {
   font-family: "Quicksand", sans-serif;
@@ -103,6 +108,14 @@ body.quicksand-light {
   color: var(--rose-bonbon);
 }
 
+.story-highlight {
+  background: linear-gradient(45deg, rgba(255, 105, 180, 0.1), rgba(221, 160, 221, 0.1));
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--rose-bonbon);
+  font-style: italic;
+  margin: 2rem 0;
+}
 
 
 @custom-variant dark (&:is(.dark *));
@@ -155,6 +168,7 @@ body.quicksand-light {
   --fraise: #FFB6C1;
   --or-rose: #E8B4B8;
   --blanc-casse: #FEFEFE;
+  --violet-doux: #DDA0DD;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
