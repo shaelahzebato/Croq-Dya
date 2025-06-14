@@ -262,143 +262,49 @@ body.quicksand-light {
   }
 }
 
+@keyframes dya-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.dya-bounce {
+  animation: dya-bounce 2s infinite;
+}
+
+.dya-bounce-delay-1 {
+  animation: dya-bounce 2s infinite;
+  animation-delay: -0.5s;
+}
+
+.dya-bounce-delay-2 {
+  animation: dya-bounce 2s infinite;
+  animation-delay: -1s;
+}
+
+.dya-bounce-delay-3 {
+  animation: dya-bounce 2s infinite;
+  animation-delay: -1.5s;
+}
 
 
+.dya-hover-pop:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+  transition: all 0.3s ease;
+}
 
-/**
-//Couleurs Croq'Dya en plus du système existant
-    colors: {
-        'rose-bonbon': '
-      #FF69B4',
-              'cream': '
-      #FFF8DC',
-              'chocolat': '
-      #8B4513',
-              'vanille': '
-      #F3E5AB',
-              'fraise': '
-      #FFB6C1',
-              'or-rose': '
-      #E8B4B8',
-              'blanc-casse': '
-      #FEFEFE',
-              'violet-doux': '
-      #DDA0DD',
-              'peche': '
-      #FFCBA4',
-              'croqdya': {
-                50: '
-      #fef7f7',
-                100: '
-      #feecec',
-                200: '
-      #fdd8df',
-                300: '
-      #fbb6c8',
-                400: '
-      #f786a7',
-                500: '
-      #FF69B4', // rose-bonbon principal
-                600: '
-      #e11d48',
-                700: '
-      #be123c',
-                800: '
-      #9f1239',
-                900: '
-      #881337',
-                950: '
-      #4c0519',
-              },
-      },
 
-      // Polices Croq'Dya
-      fontFamily: {
-        'dancing': ['var(--font-dancing-script)', 'cursive'],
-        'quicksand': ['var(--font-quicksand)', 'sans-serif'],
-      },
+/* <div className="dya-bounce dya-hover-pop">🏆</div> 
 
-      // Box shadows Croq'Dya
-      boxShadow: {
-        'croqdya': '0 10px 30px rgba(255, 105, 180, 0.1)',
-        'croqdya-hover': '0 20px 40px rgba(255, 105, 180, 0.2)',
-        'croqdya-active': '0 5px 15px rgba(255, 105, 180, 0.3)',
-      },
-
-      // Animations personnalisées
-      animation: {
-        'float': 'float 3s ease-in-out infinite',
-        'bounce-soft': 'bounce-soft 2s infinite',
-        'pulse-glow': 'pulse-glow 2s infinite',
-      },
-
-      // Keyframes
-      keyframes: {
-        float: {
-          '0%, 100%': { 
-            transform: 'translateY(0px) rotate(0deg)' 
-          },
-          '50%': { 
-            transform: 'translateY(-10px) rotate(2deg)' 
-          },
-        },
-        'bounce-soft': {
-          '0%, 20%, 50%, 80%, 100%': { 
-            transform: 'translateY(0)' 
-          },
-          '40%': { 
-            transform: 'translateY(-10px)' 
-          },
-          '60%': { 
-            transform: 'translateY(-5px)' 
-          },
-        },
-        'pulse-glow': {
-          '0%': { 
-            boxShadow: '0 0 0 0 rgba(255, 105, 180, 0.7)' 
-          },
-          '70%': { 
-            boxShadow: '0 0 0 10px rgba(255, 105, 180, 0)' 
-          },
-          '100%': { 
-            boxShadow: '0 0 0 0 rgba(255, 105, 180, 0)' 
-          },
-        },
-      },
-
-      // Backdrop blur
-      backdropBlur: {
-        'glass': '20px',
-      },
-
-      // Spacing personnalisé
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-      },
-    },
-  },
-  darkMode: 'class',
-  plugins: [
-    // Plugin pour les utilities personnalisées Croq'Dya
-    function({ addUtilities }: { addUtilities: any }) {
-      const newUtilities = {
-        '.glass-croqdya': {
-          background: 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 105, 180, 0.1)',
-        },
-        '.text-gradient-croqdya': {
-          background: 'linear-gradient(45deg, #FF69B4, #DDA0DD)',
-          '-webkit-background-clip': 'text',
-          'background-clip': 'text',
-          '-webkit-text-fill-color': 'transparent',
-        },
-      }
-      addUtilities(newUtilities)
-    },
-  ],
-};
-
-export default config;
-**/
+<div className="text-5xl mb-4 dya-bounce">🏆</div>
+<div className="text-5xl mb-4 dya-bounce-delay-1">🥇</div>
+<div className="text-5xl mb-4 dya-bounce-delay-2">⭐</div>
+<div className="text-5xl mb-4 dya-bounce-delay-3">🌱</div>
+*/

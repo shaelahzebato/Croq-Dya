@@ -1,134 +1,146 @@
 import { Card } from '@/components/ui/card'
-import { CakeSlice, ChefHat, ChefHatIcon,  Flame,  Handshake,  Heart,  Leaf,  Medal,  Phone, Recycle, Sparkle, Sprout, Star, Trophy } from 'lucide-react'
+import { CakeSlice, Handshake, Heart, Phone, Recycle, Sparkle } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
-import { UtensilsCrossed } from "lucide-react";
 import { Cake } from "lucide-react";
+
 
 export default function AproposPage() {
   return (
-    <main className='min-h-screen bg-[#FFF8DC]'>
+    <main className="min-h-screen bg-[#FFF8DC]">
 
-      {/* section notre histoire */}
-      <section className='max-w-6xl mx-auto px-6 py-14'>
-        <Card className='bg-[#fdebec] p-10 flex flex-col items-center justify-center shadow-[#E8B4B8] border-none'>
-          <h1 className='dancing_script text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-[#FF69B4]'>Notre Histoire</h1>
-          <p className="text-[#8B4513] text-base sm:text-lg lg:text-xl text-center leading-relaxed max-w-lg mx-auto lg:mx-0">Découvrez l'univers passionné de Croq'Dya, où chaque création raconte une histoire d'amour pour la pâtisserie française</p>
+      {/* Notre Histoire */}
+      <section className="max-w-6xl mx-auto px-6 py-14">
+        <Card className="bg-[#fdebec] p-10 shadow-md shadow-[#E8B4B8] border-none text-center">
+          <h1 className="dancing_script text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#FF69B4] mb-4">Notre Histoire</h1>
+          <p className="text-[#8B4513] text-base sm:text-lg lg:text-xl max-w-lg mx-auto leading-relaxed">
+            Découvrez l'univers passionné de Croq'Dya, où chaque création raconte une histoire d'amour pour la pâtisserie française.
+          </p>
         </Card>
       </section>
 
       {/* L'Aventure Croq'Dya */}
-      <section className='max-w-6xl mx-auto px-6 py-14'>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-          <Card className='flex-1 md:flex-2 bg-white p-10 text-[#8B4513] shadow-[#FEFEFE] border-none'>
-            <h2 className="text-[#FF69B4] dancing_script text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight dancing_script">L'Aventure Croq'Dya</h2>
-            <p>Tout a commencé en 2018 dans une petite cuisine parisienne, où Emma et Thomas, passionnés de pâtisserie depuis l'enfance, ont décidé de transformer leur rêve en réalité. Inspirés par les recettes de grand-mère et les techniques modernes, ils ont créé Croq'Dya avec une mission simple : rendre la gourmandise accessible à tous.</p>
-            <div className="story-highlight">
-              <p className='italic'>"Chaque gâteau que nous créons porte en lui l'amour et la passion que nous avons pour notre métier. Nous ne faisons pas que de la pâtisserie, nous créons des moments de bonheur."</p>
-              <span className='font-bold italic'>- Emma & Thomas, Fondateurs</span>
+      <section className="max-w-6xl mx-auto px-6 py-14">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
+          <Card className="flex-1 lg:flex-2 bg-white p-8 lg:p-10 text-[#8B4513] shadow-sm shadow-[#FEFEFE] border-none space-y-6">
+            <h2 className="text-[#FF69B4] dancing_script text-4xl lg:text-5xl font-bold">L'Aventure Croq'Dya</h2>
+            <p>
+              Tout a commencé en 2018 dans une petite cuisine parisienne, où Emma et Thomas, passionnés de pâtisserie depuis l'enfance, ont décidé de transformer leur rêve en réalité...
+            </p>
+            <div className="bg-[linear-gradient(45deg,rgba(255,105,180,0.1),rgba(221,160,221,0.1))] italic px-6 py-4 my-8 rounded-[15px] border-l-4 border-[#FF69B4]">
+              "Chaque gâteau que nous créons porte en lui l'amour et la passion que nous avons pour notre métier. Nous ne faisons pas que de la pâtisserie, nous créons des moments de bonheur."
+              <footer className="mt-2 font-bold">— Emma & Thomas, Fondateurs</footer>
             </div>
-            <p>Aujourd'hui, Croq'Dya c'est une équipe de 12 artisans passionnés, un atelier moderne au cœur de Paris, et plus de 10 000 clients qui nous font confiance pour leurs moments les plus précieux. De l'anniversaire d'enfant au mariage de rêve, nous mettons notre savoir-faire au service de vos émotions.</p>
+            {/* <blockquote className="italic border-l-4 border-[#FF69B4] rounded-2xl pl-4">
+              "Chaque gâteau que nous créons porte en lui l'amour et la passion que nous avons pour notre métier. Nous ne faisons pas que de la pâtisserie, nous créons des moments de bonheur."
+              <footer className="mt-2 font-bold">— Emma & Thomas, Fondateurs</footer>
+            </blockquote> */}
+            <p>
+              Aujourd'hui, Croq'Dya c’est une équipe de 12 artisans passionnés, un atelier moderne au cœur de Paris, et plus de 10 000 clients...
+            </p>
           </Card>
-          <Card className='flex-1 bg-[#E8B4B8] p-10 shadow-[#FEFEFE] border-none'>
-            <div className="flex flex-col items-center gap-20 underline text-[#8B4513]">
-              <h3 className='flex items-center dancing_script text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight dancing_script'>
-                <span>Chef Dya</span>
-                <CakeSlice/></h3>
-              <div className="flex gap-4">
-                <ChefHat className="w-40 h-40 text-[#8B4513]" />
-                <Cake className="w-40 h-40 text-[#8B4513]"/>
-              </div>
+
+          <Card className="flex-1 bg-[#E8B4B8] p-8 lg:p-10 shadow-md shadow-[#FEFEFE] border-none flex flex-col items-center gap-8 text-[#8B4513]">
+            <h3 className="dancing_script text-4xl lg:text-6xl font-bold flex items-center gap-2">
+              Chef Dya <CakeSlice />
+            </h3>
+            <div className="flex gap-6">
+              <Cake className="w-28 h-28 sm:w-36 sm:h-36 animate-float" />
             </div>
-          </Card>          
+          </Card>
         </div>
       </section>
-      
+
       {/* Nos Valeurs */}
-      <section className='max-w-6xl mx-auto px-6 py-14'>
-        <Card className='flex-1 p-10 shadow-[#FFF8DC] border-none'>
-          <h2 className='text-[#FF69B4] py-6 text-center dancing_script text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight'>Nos Valeurs</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-[#FFF8DC] flex flex-col items-center gap-6 p-4 hover:border-2 hover:border-[#FF69B4] hover:scale-105 rounded-2xl">
-              <div className="flex gap-8 text-[#FF69B4]">
-                <Recycle className="w-20 h-20" />
+      <section className="max-w-6xl mx-auto px-6 py-14">
+        <Card className="p-10 shadow-md shadow-[#FFF8DC] border-none">
+          <h2 className="text-[#FF69B4] text-center dancing_script text-4xl lg:text-5xl font-bold mb-10">Nos Valeurs</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: <Recycle className="w-16 h-16 text-[#FF69B4] animate-float" />, title: "Durabilité", text: "Nous privilégions les circuits courts, les producteurs locaux et les ingrédients biologiques. Notre engagement pour la planète se reflète dans chaque création." },
+              { icon: <Heart className="w-16 h-16 text-[#FF69B4] fill-[#FF69B4] animate-float" />, title: "Passion", text: "Chaque geste, chaque recette, chaque décoration est pensée avec amour. La passion est l'ingrédient secret qui rend nos créations si particulières." },
+              { icon: <Sparkle className="w-16 h-16 text-[#FF69B4] animate-float" />, title: "Excellence", text: "Nous nous perfectionnons chaque jour pour vous offrir le meilleur. Qualité des ingrédients, techniques raffinées, présentation soignée." },
+              { icon: <Handshake className="w-16 h-16 text-[#FF69B4] animate-float" />, title: "Proximité", text: "Nous croyons en la relation humaine. Chaque client est unique et mérite une attention personnalisée pour réaliser ses rêves gourmands." },
+            ].map(({ icon, title, text }, i) => (
+              <div key={i} className="bg-[#FFF8DC] p-6 rounded-2xl text-center hover:scale-105 hover:border-2 hover:border-[#FF69B4] transition-all duration-300 shadow-sm">
+                <div className="flex justify-center mb-4">{icon}</div>
+                <h3 className="dancing_script text-2xl font-bold text-[#FF69B4] mb-6">{title}</h3>
+                <p className="text-[#8B4513]">{text}</p>
               </div>
-              <h3 className='dancing_script text-2xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-[#FF69B4]'>Durabilité</h3>
-              <p className='text-center'>Nous privilégions les circuits courts, les producteurs locaux et les ingrédients biologiques. Notre engagement pour la planète se reflète dans chaque création.</p>
-            </div>
-            <div className="bg-[#FFF8DC] flex flex-col items-center gap-6 p-4 hover:border-2 hover:border-[#FF69B4] hover:scale-105 rounded-2xl">
-              <div className="flex gap-8 text-[#FF69B4]">
-                <Heart className="w-20 h-20 fill-[#FF69B4] text-[#FF69B4]" />
-              </div>
-              <h3 className='dancing_script text-2xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-[#FF69B4]'>Passion</h3>
-              <p className='text-center'>Chaque geste, chaque recette, chaque décoration est pensée avec amour. La passion est l'ingrédient secret qui rend nos créations si particulières.</p>
-            </div>
-            <div className="bg-[#FFF8DC] flex flex-col items-center gap-6 p-4 hover:border-2 hover:border-[#FF69B4] hover:scale-105 rounded-2xl">
-              <div className="flex gap-8 text-[#FF69B4]">
-                <Sparkle className="w-20 h-20" />
-              </div>
-              <h3 className='dancing_script text-2xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-[#FF69B4]'>Excellence</h3>
-              <p className='text-center'>Nous nous perfectionnons chaque jour pour vous offrir le meilleur. Qualité des ingrédients, techniques raffinées, présentation soignée.</p>
-            </div>
-            <div className="bg-[#FFF8DC] flex flex-col items-center gap-6 p-4 hover:border-2 hover:border-[#FF69B4] hover:scale-105 rounded-2xl">
-              <div className="flex gap-8 text-[#FF69B4]">
-                <Handshake className="w-20 h-20" />
-              </div>
-              <h3 className='dancing_script text-2xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight text-[#FF69B4]'>Proximité</h3>
-              <p className='text-center'>Nous croyons en la relation humaine. Chaque client est unique et mérite une attention personnalisée pour réaliser ses rêves gourmands.</p>
-            </div>
+            ))}
           </div>
         </Card>
       </section>
 
       {/* Nos Récompenses */}
-      <section className='max-w-6xl mx-auto px-6 py-14'>
-        <Card className='bg-[#fdebec] shadow-[#E8B4B8] border-none p-10 flex flex-col items-center justify-center text-white'>
-          <h2 className='text-[#FF69B4] py-6 text-center dancing_script text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight'>Nos Valeurs</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="flex flex-col gap-4 items-center bg-white p-8 rounded-2xl">
-              <Trophy className='h-10 w-10 text-[#8B4513]'/>
-              <h3 className='text-[#FF69B4] dancing_script text-xl font-bold'>Meilleur Pâtissier Abidjan</h3>
-              <span className="text-[#8B4513]">Le Figaro - 2023</span>
-            </div>
-
-            <div className="flex flex-col gap-4 items-center bg-white p-8 rounded-2xl">
-              <Medal className='h-10 w-10 text-[#8B4513]'/>
-              <h3 className='text-[#FF69B4] dancing_script text-xl font-bold'>Prix Innovation Dessert</h3>
-              <span className="text-[#8B4513]">Salon du Chocolat - 2022</span>
-            </div>
-
-            <div className="flex flex-col gap-4 items-center bg-white p-8 rounded-2xl">
-              <Star className='h-10 w-10 text-[#8B4513]'/>
-              <h3 className='text-[#FF69B4] dancing_script text-xl font-bold'>5 étoiles TripAdvisor</h3>
-              <span className="text-[#8B4513]">Excellence Client - 2023</span>
-            </div>
-
-            <div className="flex flex-col gap-4 items-center bg-white p-8 rounded-2xl">
-              <Sprout className='h-10 w-10 text-[#8B4513]'/>
-              <h3 className='text-[#FF69B4] dancing_script text-xl font-bold'>Label Éco-Responsable</h3>
-              <span className="text-[#8B4513]">Ville d'Abidjan - 2023</span>
-            </div>
+      <section className="max-w-6xl mx-auto px-6 py-14">
+        <Card className="bg-[#fdebec] p-10 border-none shadow-sm shadow-[#E8B4B8] text-center">
+          <h2 className="text-[#FF69B4] dancing_script text-4xl lg:text-5xl font-bold mb-10">Nos Récompenses</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: '🏆', title: "Meilleur Pâtissier Abidjan", subtitle: "Le Figaro - 2023", delay: 'animate-bounce' },
+              { icon: '🥇', title: "Prix Innovation Dessert", subtitle: "Salon du Chocolat - 2022", delay: 'animate-bounce [animation-delay:-0.5s]' },
+              { icon: '⭐', title: "5 étoiles TripAdvisor", subtitle: "Excellence Client - 2023", delay: 'animate-bounce [animation-delay:-1s]' },
+              { icon: '🌱', title: "Label Éco-Responsable", subtitle: "Ville d'Abidjan - 2023", delay: 'animate-bounce [animation-delay:-1.5s]' }
+            ].map(({ icon, title, subtitle, delay }, i) => (
+              <div key={i} className="bg-white p-6 rounded-2xl shadow-md flex flex-col items-center gap-4">
+                <div className={`text-5xl mb-4 ${delay}`}>
+                  {icon}
+                </div>
+                <h3 className="dancing_script text-xl font-bold text-[#FF69B4] mt-4">{title}</h3>
+                <span className="text-[#8B4513]">{subtitle}</span>
+              </div>
+            ))}
           </div>
         </Card>
       </section>
+      {/* <section className="bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(255,248,220,0.8))] backdrop-blur-lg rounded-[25px] px-6 sm:px-12 py-16 mb-16 shadow-[0_20px_40px_rgba(255,105,180,0.15)]">
+        <h2 className="dancing_script text-[#FF69B4] text-4xl sm:text-5xl lg:text-6xl text-center mb-12 font-bold">
+          Nos Récompenses
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { icon: '🏆', title: 'Meilleur Pâtissier Paris', year: 'Le Figaro - 2023', delay: 'animate-bounce' },
+            { icon: '🥇', title: 'Prix Innovation Dessert', year: 'Salon du Chocolat - 2022', delay: 'animate-bounce [animation-delay:-0.5s]' },
+            { icon: '⭐', title: '5 étoiles TripAdvisor', year: 'Excellence Client - 2023', delay: 'animate-bounce [animation-delay:-1s]' },
+            { icon: '🌱', title: 'Label Éco-Responsable', year: 'Ville de Paris - 2023', delay: 'animate-bounce [animation-delay:-1.5s]' }
+          ].map((award, index) => (
+            <div
+              key={index}
+              className="bg-white text-center p-8 rounded-[15px] shadow-[0_10px_25px_rgba(255,105,180,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(255,105,180,0.2)]"
+            >
+              <div className={`text-5xl mb-4 ${award.delay}`}>
+                {award.icon}
+              </div>
+              <h3 className="text-[#FF69B4] font-bold text-lg mb-1">{award.title}</h3>
+              <p className="text-[#8B4513] text-sm opacity-80">{award.year}</p>
+            </div>
+          ))}
+        </div>
+      </section> */}
 
       {/* Rejoignez l'Aventure */}
-      <section className='max-w-6xl mx-auto px-6 py-14'>
-        <Card className='about-card p-10 flex flex-col items-center justify-center text-white'>
-          <h2 className='dancing_script text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight'>Rejoignez l'Aventure</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-center leading-relaxed max-w-lg mx-auto lg:mx-0">Découvrez nos créations et laissez-vous emporter par la magie de Croq'Dya</p>
-          <div className="flex gap-10">
-            <Link href={"/menu"} className='bg-white p-4 rounded-2xl flex items-center gap-1'>
-              <span className='text-[#FF69B4]'><CakeSlice/></span>
-              <span className='text-[#FF69B4] quicksand'>Découvrir le Menu</span>
+      <section className="max-w-6xl mx-auto px-6 py-14">
+        <Card className="about-card text-white p-10 rounded-2xl text-center">
+          <h2 className="dancing_script text-4xl lg:text-5xl font-bold mb-6">Rejoignez l'Aventure</h2>
+          <p className="max-w-lg mx-auto mb-8 text-lg lg:text-xl">Découvrez nos créations et laissez-vous emporter par la magie de Croq'Dya.</p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Link href="/menu">
+              <div className="bg-white text-[#FF69B4] px-4 py-4.5 rounded-2xl flex items-center gap-2 hover:shadow-lg transition">
+                <CakeSlice />
+                <span className='quicksand font-bold'>Découvrir le Menu</span>
+              </div>
             </Link>
-            <Link href={"/contact"} className='border-2 border-white p-4 rounded-2xl flex items-center gap-1'>
-              <span className='text-white'><Phone/></span>
-              <span className='text-white quicksand'>Nous Contacter</span>
+            <Link href="/contact">
+              <div className="border-2 border-white px-4 py-4.5 rounded-2xl flex items-center gap-2 hover:shadow-lg transition">
+                <Phone />
+                <span className='quicksand'>Nous Contacter</span>
+              </div>
             </Link>
           </div>
         </Card>
       </section>
     </main>
-  )
+  );
 }
