@@ -307,7 +307,9 @@ body.quicksand-light {
   backdrop-filter: blur(10px);
 }
 
-
+.bg-gradient-cream {
+  background: linear-gradient(135deg, var(--cream), var(--blanc-casse));
+}
 
 /* <div className="dya-bounce dya-hover-pop">🏆</div> 
 

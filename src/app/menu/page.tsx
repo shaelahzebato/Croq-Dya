@@ -615,7 +615,7 @@ export default function MenuPage() {
                 <span className="text-[#FF69B4] text-xl py-2">{dessert.price}</span>
                 <div className="w-full flex justify-between items-center mt-2">
                     <Button className="bg-[#FF69B4] cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Ajouter au panier</Button>
-                    <Link href={"/"}>
+                    <Link href={"/dessert/1"}>
                       <Button className="bg-white text-[#FF69B4] border border-[#FF69B4] hover:bg-pink-100 cursor-pointer transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
                         <Eye/>
                       </Button>
