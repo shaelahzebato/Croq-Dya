@@ -40,7 +40,7 @@ export default function AproposPage() {
             </p>
           </Card>
 
-          <Card className="flex-2 lg:flex-1 bg-[#E8B4B8] p-8 lg:p-10 shadow-md shadow-[#FEFEFE] border-none flex flex-col items-center gap-8 text-[#8B4513]">
+          <Card className="w-full lg:flex-1 bg-[#E8B4B8] p-8 lg:p-10 shadow-md shadow-[#FEFEFE] border-none flex flex-col items-center gap-8 text-[#8B4513]">
             <h3 className="dancing_script text-4xl lg:text-6xl font-bold flex items-center gap-2">
               Chef Dya <CakeSlice />
             </h3>
