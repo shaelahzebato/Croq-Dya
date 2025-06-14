@@ -301,6 +301,14 @@ body.quicksand-light {
 }
 
 
+
+.bg-contact-gradient {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 248, 220, 0.8));
+  backdrop-filter: blur(10px);
+}
+
+
+
 /* <div className="dya-bounce dya-hover-pop">🏆</div> 
 
 <div className="text-5xl mb-4 dya-bounce">🏆</div>
