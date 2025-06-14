@@ -14,7 +14,7 @@ export default function AproposPage() {
         <Card className="bg-[#fdebec] p-10 shadow-md shadow-[#E8B4B8] border-none text-center">
           <h1 className="dancing_script text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#FF69B4] mb-4">Notre Histoire</h1>
           <p className="text-[#8B4513] text-base sm:text-lg lg:text-xl max-w-lg mx-auto leading-relaxed">
-            Découvrez l'univers passionné de Croq'Dya, où chaque création raconte une histoire d'amour pour la pâtisserie française.
+            Découvrez l'univers passionné de Croq'Dya, où chaque création raconte une histoire d'amour pour la pâtisserie franco-ivoirienne.
           </p>
         </Card>
       </section>
