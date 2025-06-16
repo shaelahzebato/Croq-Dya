@@ -104,7 +104,7 @@ export default function PanierPage() {
 
             {items.map((item) => (
               <div key={item.key} className="space-y-4">
-                <div className="flex gap-4 items-center">
+                <div className="flex flex-col md:flex-row gap-4 items-center">
                   <div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-2xl overflow-hidden shadow-lg">
                     <Image
                       src={item.image}
