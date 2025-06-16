@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Heart, Minus, Plus, ShoppingBag } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const imageList = [
@@ -119,7 +120,7 @@ export default function DessertDetailsPage() {
                 ].map((size, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center gap-2 rounded-2xl py-4 px-6 bg-[#FFF8DC] hover:bg-white hover:scale-105 hover:border-2 hover:border-[#FF69B4] transition-all duration-300 shadow-sm"
+                    className="flex flex-col items-center gap-2 rounded-2xl py-4 px-6 border-none bg-[#FFF8DC] hover:bg-white hover:scale-105 hover:border-2 hover:border-[#FF69B4] transition-all duration-300"
                   >
                     <span className="text-pink-500">{size.label}</span>
                     <span>{size.price}</span>
@@ -170,6 +171,79 @@ export default function DessertDetailsPage() {
             </Card>
           </div>
         </div>
+
+        <section className="flex flex-col gap-6">
+          <Card className="flex flex-row justify-between p-6 border-none">
+            <div>Lorem ipsum dolor sit amet consectetur.</div>
+            <div>Aliquid dolores ab eum fugiat ut!</div>
+            <div>Officia et excepturi quia fuga cumque!</div>
+          </Card>
+
+          <Card className="flex flex-col gap-6 p-6">
+            <h2>Informations sur les allergènes</h2>
+            <Card className="bg-pink-200 border-none p-6">
+              <div>Lorem ipsum dolor sit amet consectetur.</div>
+            </Card>
+            <Card className="bg-blue-100 border-none p-6">
+              <div>Lorem ipsum dolor sit amet consectetur.</div>
+            </Card>
+          </Card>
+        </section>
+
+        {/* SUGGESTION */}
+        <section className="p-10 shadow-md shadow-[#FFF8DC] border-none">
+          <h2 className="text-[#FF69B4] text-center dancing_script text-4xl lg:text-5xl font-bold mb-10">Vous aimerez aussi</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-2xl text-center hover:scale-105 transition-all duration-300 shadow-sm">
+              <div className="relative w-52 h-52 mb-4 flex items-center justify-center">
+                <Image
+                  src="/Creamy-coconut.jpg"
+                  alt="Gâteau d'anniversaire aux fraises"
+                  fill
+                  className="object-cover rounded-full shadow-2xl animate-float"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col gap-4 justify-self-start">
+                <h3 className="text-xl text-[#FF69B4]">Opéra Chocolat</h3>
+                <span className="self-start text-[#8B4513]">28,50 €</span>
+                <Link href={"/dessert/1"} className="bg-[#FF69B4] text-white font-bold p-2 rounded-2xl cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Voir le produit</Link>
+              </div>
+            </div>
+            <div className="bg-white p-6 rounded-2xl text-center hover:scale-105 transition-all duration-300 shadow-sm">
+              <div className="relative w-52 h-52 mb-4 flex items-center justify-center">
+                <Image
+                  src="/Delicious-vegan-valentine’s-day-desserts.jpg"
+                  alt="Gâteau d'anniversaire aux fraises"
+                  fill
+                  className="object-cover rounded-full shadow-2xl animate-float"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col gap-4 justify-self-start">
+                <h3 className="text-xl text-[#FF69B4]">Coco Passion</h3>
+                <span className="self-start text-[#8B4513]">26,90 €</span>
+                <Link href={"/dessert/1"} className="bg-[#FF69B4] text-white font-bold p-2 rounded-2xl cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Voir le produit</Link>
+              </div>
+            </div>
+            <div className="bg-white p-6 rounded-2xl text-center hover:scale-105 transition-all duration-300 shadow-sm">
+              <div className="relative w-52 h-52 mb-4 flex items-center justify-center">
+                <Image
+                  src="/Orange-cake.jpg"
+                  alt="Gâteau d'anniversaire aux fraises"
+                  fill
+                  className="object-cover rounded-full shadow-2xl animate-float"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col gap-4 justify-self-start">
+                <h3 className="text-xl text-[#FF69B4]">Tarte au Citron</h3>
+                <span className="self-start text-[#8B4513]">24,90 €</span>
+                <Link href={"/dessert/1"} className="bg-[#FF69B4] text-white font-bold p-2 rounded-2xl cursor-pointer hover:bg-pink-500 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">Voir le produit</Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );

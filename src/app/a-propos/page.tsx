@@ -25,18 +25,18 @@ export default function AproposPage() {
           <Card className="flex-1 lg:flex-2 bg-white p-8 lg:p-10 text-[#8B4513] shadow-sm shadow-[#FEFEFE] border-none space-y-6">
             <h2 className="text-[#FF69B4] dancing_script text-4xl lg:text-5xl font-bold">L'Aventure Croq'Dya</h2>
             <p>
-              Tout a commencé en 2018 dans une petite cuisine parisienne, où Emma et Thomas, passionnés de pâtisserie depuis l'enfance, ont décidé de transformer leur rêve en réalité...
+              Tout a commencé en 2024 dans une petite cuisine ivoirienne, où Dya, passionnés de pâtisserie depuis l'enfance, a décidée de transformer son rêve en réalité...
             </p>
             <div className="bg-[linear-gradient(45deg,rgba(255,105,180,0.1),rgba(221,160,221,0.1))] italic px-6 py-4 my-8 rounded-[15px] border-l-4 border-[#FF69B4]">
               "Chaque gâteau que nous créons porte en lui l'amour et la passion que nous avons pour notre métier. Nous ne faisons pas que de la pâtisserie, nous créons des moments de bonheur."
-              <footer className="mt-2 font-bold">— Emma & Thomas, Fondateurs</footer>
+              <footer className="mt-2 font-bold">— Queen Dya, Fondatrice</footer>
             </div>
             {/* <blockquote className="italic border-l-4 border-[#FF69B4] rounded-2xl pl-4">
               "Chaque gâteau que nous créons porte en lui l'amour et la passion que nous avons pour notre métier. Nous ne faisons pas que de la pâtisserie, nous créons des moments de bonheur."
               <footer className="mt-2 font-bold">— Emma & Thomas, Fondateurs</footer>
             </blockquote> */}
             <p>
-              Aujourd'hui, Croq'Dya c’est une équipe de 12 artisans passionnés, un atelier moderne au cœur de Paris, et plus de 10 000 clients...
+              Aujourd'hui, Croq'Dya c’est une équipe de 12 artisans passionnés, un atelier moderne au cœur d'Abidjan, et plus de 10 000 clients...
             </p>
           </Card>
 
