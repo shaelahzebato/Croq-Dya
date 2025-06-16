@@ -56,7 +56,7 @@ export default function PanierPage() {
       size: "Box de 6",
       packaging: "Boîte cadeau",
       price: 42.9,
-      image: "/Rainbow-cupcakes.jpg",
+      image: "Sweet-tooth.jpg",
     },
     {
       key: "macarons",
