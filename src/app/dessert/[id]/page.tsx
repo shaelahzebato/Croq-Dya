@@ -1,6 +1,7 @@
 "use client";
 
 import InfoTabs from "@/components/InfoTabs";
+import Recommandation from "@/components/Recommandation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
@@ -176,7 +177,8 @@ export default function DessertDetailsPage() {
         <InfoTabs />
 
         {/* SUGGESTION */}
-        <section className="mt-10 p-10 shadow-md shadow-[#FFF8DC] border-none">
+        <Recommandation/>
+        {/* <section className="mt-10 p-10 shadow-md shadow-[#FFF8DC] border-none">
           <h2 className="text-[#FF69B4] text-center dancing_script text-4xl lg:text-5xl font-bold mb-10">Vous aimerez aussi</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl text-center hover:scale-105 transition-all duration-300 shadow-sm">
@@ -228,7 +230,7 @@ export default function DessertDetailsPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </section>
   );
