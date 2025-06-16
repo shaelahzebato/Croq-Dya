@@ -5,7 +5,7 @@ import React from 'react'
 import { Cake } from "lucide-react";
 
 
-export default function AproposPage() {
+export default function NotreHistoirePage() {
   return (
     <main className="min-h-screen bg-[#FFF8DC]">
 

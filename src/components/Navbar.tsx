@@ -23,16 +23,16 @@ export default function Navbar() {
         {/* Menu desktop */}
         <ul className='hidden md:flex text-[#8B4513] font-medium items-center gap-8'>
           <li className="hover:text-pink-600 transition-colors">
-            <Link href={"/menu"}>Menu</Link>
+            <Link href={"/nos-creations"}>Nos Créations</Link>
           </li>
           <li className="hover:text-pink-600 transition-colors">
             <Link href={"/commander"}>Commander</Link>
           </li>
           <li className="hover:text-pink-600 transition-colors">
-            <Link href={"/a-propos"}>À propos</Link>
+            <Link href={"/notre-histoire"}>L'Atelier Dya</Link>
           </li>
           <li className="hover:text-pink-600 transition-colors">
-            <Link href={"/contact"}>Contact</Link>
+            <Link href={"/nous-contacter"}>Nous Contacter</Link>
           </li>
         </ul>
 
@@ -42,9 +42,11 @@ export default function Navbar() {
             <ShoppingBag className='w-5 h-5 text-[#8B4513] group-hover:text-pink-600 transition-colors'/>
             <span className='absolute -top-2 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold'>3</span>
           </Link>
-          <Button className='bg-white text-pink-600 border border-pink-600 rounded-full px-6 hover:bg-pink-50 hover:scale-105 transition- cursor-pointer'>
-            Connexion
-          </Button>
+          <Link href={"/se-connecter"}>
+            <Button className='bg-white text-pink-600 border border-pink-600 rounded-full px-6 hover:bg-pink-50 hover:scale-105 transition- cursor-pointer'>
+              Connexion
+            </Button>
+          </Link>
         </div>
 
         {/* Menu mobile - bouton hamburger */}
@@ -66,11 +68,11 @@ export default function Navbar() {
           <div className='absolute top-full left-0 right-0 bg-white shadow-lg shadow-pink-200/30 border-t md:hidden'>
             <div className='px-4 py-4 space-y-4'>
               <Link 
-                href={"/menu"} 
+                href={"/nos-creations"} 
                 className='quicksand block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
                 onClick={() => setIsMenuOpen(false)}
               >
-                Menu
+                Nos Créations
               </Link>
               <Link 
                 href={"/commander"} 
@@ -80,23 +82,25 @@ export default function Navbar() {
                 Commander
               </Link>
               <Link 
-                href={"/a-propos"} 
+                href={"/notre-histoire"} 
                 className='quicksand block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
                 onClick={() => setIsMenuOpen(false)}
               >
-                À propos
+                L'Atelier Dya
               </Link>
               <Link 
-                href={"/contact"} 
+                href={"/nous-contacter"} 
                 className='quicksand block text-[#8B4513] font-medium py-2 hover:text-pink-600 transition-colors'
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                Nous Contacter
               </Link>
               <div className='pt-4 border-t'>
-                <Button className='w-full quicksand bg-white text-pink-600 border border-pink-600 rounded-full hover:bg-pink-50 transition-colors cursor-pointer'>
-                  Connexion
-                </Button>
+                <Link href={"/se-connecter"}>
+                  <Button className='w-full quicksand bg-white text-pink-600 border border-pink-600 rounded-full hover:bg-pink-50 transition-colors cursor-pointer'>
+                    Connexion
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -105,3 +109,8 @@ export default function Navbar() {
     </header>
   )
 }
+
+// Navigation suggérée
+
+// Menu → "Voir plus" → Commander
+// Navbar : "Menu" (découverte) + "Commander" (achat direct)
