@@ -359,6 +359,15 @@ body::before {
   66% { transform: translateX(-20px) translateY(20px) rotate(240deg); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
 
 /* <div className="dya-bounce dya-hover-pop">🏆</div> 
 
