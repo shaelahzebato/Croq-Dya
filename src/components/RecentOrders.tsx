@@ -30,7 +30,7 @@ export default function RecentOrders() {
   return (
     <section className="bg-white p-6 rounded-2xl shadow-md w-full overflow-x-auto">
       <h2 className="text-4xl font-bold text-[#FF69B4] dancing_script mb-6 flex items-center gap-2">
-        <Box className="h-10 w-10"/> Commandes Récentes
+        <Box className="h-10 w-10 text-[#8B4513]"/> Commandes Récentes
       </h2>
       <table className="min-w-full border-collapse">
         <thead>
