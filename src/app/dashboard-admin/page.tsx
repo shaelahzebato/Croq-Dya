@@ -63,7 +63,7 @@ function AdminDashboardPage() {
           <div className="p-6">
             <header className='flex flex-col lg:flex-row justify-between items-center bg-white rounded-2xl p-6 gap-4'>
               <h1 className="dancing_script text-4xl sm:text-5xl text-[#FF69B4] font-bold">Dashboard Admin</h1>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col lg:flex-row items-center gap-4">
                 <Button className='bg-green-600 hover:bg-green-700'><Plus className='mr-2' /> Nouveau Produit</Button>
                 <Link href={"/"} className='bg-[#FF69B4] text-white py-2 px-4 rounded-lg hover:bg-pink-500'> <FileBarChart className='inline mr-2' /> Rapport du Jour</Link>
               </div>
