@@ -1,11 +1,12 @@
 "use client";
 
+import { ChartSpline, Grape, MessageSquareWarning, TriangleAlert } from "lucide-react";
 import React, { useState } from "react";
 
 const tabs = [
-  { id: "ingredients", label: "Ingrédients", icon: "🍓" },
-  { id: "nutrition", label: "Valeurs nutritionnelles", icon: "📊" },
-  { id: "allergens", label: "Allergènes", icon: "⚠️" },
+  { id: "ingredients", label: "Ingrédients", icon: <Grape/> },
+  { id: "nutrition", label: "Valeurs nutritionnelles", icon: <ChartSpline/> },
+  { id: "allergens", label: "Allergènes", icon: <TriangleAlert/> },
 ];
 
 export default function InfoTabs() {
@@ -19,13 +20,16 @@ export default function InfoTabs() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex-1 py-3 px-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 ${
+            className={`flex-1 py-3 px-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 cursor-pointer ${
               activeTab === tab.id
                 ? "bg-[#FF69B4] text-white"
                 : "text-[#8B4513] hover:bg-[#FFE4E6]"
             }`}
           >
-            {tab.icon} {tab.label}
+            <div className="flex items-center gap-2">
+              <span>{tab.icon}</span>
+              <span>{tab.label}</span>
+            </div>
           </button>
         ))}
       </div>
@@ -82,10 +86,10 @@ export default function InfoTabs() {
           <div className="space-y-4">
             <h3 className="text-[#FF69B4] font-bold text-xl">Informations sur les allergènes</h3>
             <div className="bg-[#ffe6e6] text-[#d63384] p-4 rounded-xl">
-              <strong>⚠️ Contient :</strong> Gluten, Œufs, Lait
+              <strong><TriangleAlert/> Contient :</strong> Gluten, Œufs, Lait
             </div>
             <div className="bg-[#e6f3ff] text-[#0066cc] p-4 rounded-xl">
-              <strong>ℹ️ Peut contenir des traces de :</strong> Fruits à coque, Soja
+              <strong><MessageSquareWarning/> Peut contenir des traces de :</strong> Fruits à coque, Soja
             </div>
           </div>
         )}

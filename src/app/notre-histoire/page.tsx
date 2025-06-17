@@ -94,31 +94,6 @@ export default function NotreHistoirePage() {
           </div>
         </Card>
       </section>
-      {/* <section className="bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(255,248,220,0.8))] backdrop-blur-lg rounded-[25px] px-6 sm:px-12 py-16 mb-16 shadow-[0_20px_40px_rgba(255,105,180,0.15)]">
-        <h2 className="dancing_script text-[#FF69B4] text-4xl sm:text-5xl lg:text-6xl text-center mb-12 font-bold">
-          Nos Récompenses
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { icon: '🏆', title: 'Meilleur Pâtissier Paris', year: 'Le Figaro - 2023', delay: 'animate-bounce' },
-            { icon: '🥇', title: 'Prix Innovation Dessert', year: 'Salon du Chocolat - 2022', delay: 'animate-bounce [animation-delay:-0.5s]' },
-            { icon: '⭐', title: '5 étoiles TripAdvisor', year: 'Excellence Client - 2023', delay: 'animate-bounce [animation-delay:-1s]' },
-            { icon: '🌱', title: 'Label Éco-Responsable', year: 'Ville de Paris - 2023', delay: 'animate-bounce [animation-delay:-1.5s]' }
-          ].map((award, index) => (
-            <div
-              key={index}
-              className="bg-white text-center p-8 rounded-[15px] shadow-[0_10px_25px_rgba(255,105,180,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(255,105,180,0.2)]"
-            >
-              <div className={`text-5xl mb-4 ${award.delay}`}>
-                {award.icon}
-              </div>
-              <h3 className="text-[#FF69B4] font-bold text-lg mb-1">{award.title}</h3>
-              <p className="text-[#8B4513] text-sm opacity-80">{award.year}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* Rejoignez l'Aventure */}
       <section className="max-w-6xl mx-auto px-6 py-14">
@@ -126,14 +101,14 @@ export default function NotreHistoirePage() {
           <h2 className="dancing_script text-4xl lg:text-5xl font-bold mb-6">Rejoignez l'Aventure</h2>
           <p className="max-w-lg mx-auto mb-8 text-lg lg:text-xl">Découvrez nos créations et laissez-vous emporter par la magie de Croq'Dya.</p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link href="/menu">
+            <Link href="/nos-creations">
               <div className="bg-white text-[#FF69B4] px-4 py-4.5 rounded-2xl flex items-center gap-2 hover:shadow-lg transition">
                 <CakeSlice />
                 <span className='quicksand font-bold'>Découvrir le Menu</span>
               </div>
             </Link>
-            <Link href="/contact">
-              <div className="border-2 border-white px-4 py-4.5 rounded-2xl flex items-center gap-2 hover:shadow-lg transition">
+            <Link href="/nous-contacter">
+              <div className="border-2 border-white px-4 py-4 rounded-2xl flex items-center gap-2 hover:shadow-lg transition">
                 <Phone />
                 <span className='quicksand'>Nous Contacter</span>
               </div>

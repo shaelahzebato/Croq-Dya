@@ -96,7 +96,7 @@ export default function ContactPage() {
               </div>
 
               {/* Bouton */}
-              <Button className="w-full bg-gradient-to-r from-[#FF69B4] to-[#FF4D6D] text-white py-6 rounded-[15px] text-lg font-bold hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(255,105,180,0.4)] transition-all duration-300">
+              <Button className="w-full bg-gradient-to-r from-[#FF69B4] to-[#FF4D6D] text-white py-6 rounded-[15px] text-lg font-bold hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(255,105,180,0.4)] transition-all duration-300 cursor-pointer">
                 <div className="flex items-center gap-2">
                   <Mail />
                   <Heart className="fill-white" />

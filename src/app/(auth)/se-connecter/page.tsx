@@ -12,12 +12,12 @@ function SeConnecterPage() {
     <main className="bg-[#f8f8f8] min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
 
       {/* Floating Background Elements */}
-      <div className="floating-elements pointer-events-none z-0">
+      <section className="floating-elements pointer-events-none z-0">
         <div className="floating-element" style={{ top: '10%', left: '20%' }}>🍰</div>
         <div className="floating-element" style={{ top: '30%', right: '10%' }}>🧁</div>
         <div className="floating-element" style={{ bottom: '20%', left: '15%' }}>🍪</div>
         <div className="floating-element" style={{ bottom: '10%', right: '25%' }}>🎂</div>
-      </div>
+      </section>
 
       <section className="relative z-10 w-full max-w-xl bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-pink-400">
         <div className="p-6 sm:p-10 space-y-8">
@@ -69,9 +69,9 @@ function SeConnecterPage() {
             </div>
 
             {/* Options */}
-            <div className="flex justify-between items-center text-sm text-gray-600">
+            <div className="flex justify-between items-center text-sm text-[#8B4513]">
               <label className="inline-flex items-center gap-2">
-                <Checkbox id="remember" />
+                <Checkbox id="remember" className='cursor-pointer'/>
                 Se souvenir de moi
               </label>
               <Link href="/mot-de-passe-oublie" className="text-pink-500 hover:underline">
@@ -80,43 +80,43 @@ function SeConnecterPage() {
             </div>
 
             {/* Bouton */}
-            <Link href={"/dashboard-utilisateur"}>
+            <Link href={"/dashboard/client"}>
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#FF69B4] to-[#FF4D6D] text-white py-3 rounded-xl text-base font-semibold hover:-translate-y-[2px] hover:shadow-lg transition-all duration-300"
+                className="w-full bg-gradient-to-r from-[#FF69B4] to-[#FF4D6D] text-white py-3 rounded-xl text-base font-semibold hover:-translate-y-[2px] hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 Se connecter
               </Button>
             </Link>
 
             {/* OU */}
-            <div className="relative text-center">
+            <div className="relative text-center mt-4">
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="bg-white px-3 text-gray-500 text-sm">ou</span>
+                <span className="bg-white px-3 text-[#8B4513] text-sm">ou</span>
               </div>
-              <hr className="border-t border-gray-300" />
+              <hr className="border-t border-pink-200" />
             </div>
 
             {/* Connexions externes */}
             <div className="space-y-3">
               <button
                 type="button"
-                className="w-full border border-gray-300 rounded-xl py-2 px-4 flex items-center justify-center gap-3 hover:bg-gray-50 transition"
+                className="w-full border border-pink-200 rounded-xl py-2 px-4 flex items-center justify-center gap-3 hover:bg-[#FFF8DC] transition cursor-pointer"
               >
                 <FcGoogle size={20} />
-                <span className="text-sm font-medium text-gray-700">Continuer avec Google</span>
+                <span className="text-sm font-medium text-[#8B4513]">S'inscrire avec Google</span>
               </button>
               <button
                 type="button"
-                className="w-full border border-gray-300 rounded-xl py-2 px-4 flex items-center justify-center gap-3 hover:bg-gray-50 transition"
+                className="w-full border border-pink-200 rounded-xl py-2 px-4 flex items-center justify-center gap-3 hover:bg-[#FFF8DC] transition cursor-pointer"
               >
                 <FaApple size={20} />
-                <span className="text-sm font-medium text-gray-700">Continuer avec Apple</span>
+                <span className="text-sm font-medium text-[#8B4513]">S'inscrire avec Apple</span>
               </button>
             </div>
 
             {/* Redirection création compte */}
-            <p className="text-center text-sm text-gray-700">
+            <p className="text-center text-sm text-[#8B4513]">
               Pas encore de compte ?{" "}
               <Link href={"/creer-un-compte"} className="text-pink-500 hover:underline font-medium">
                 Créer un compte

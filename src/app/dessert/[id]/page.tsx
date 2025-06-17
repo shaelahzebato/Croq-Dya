@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Heart, Minus, Plus, ShoppingBag } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 
 const imageList = [
@@ -51,7 +50,7 @@ export default function DessertDetailsPage() {
                 <button
                   key={i}
                   onClick={() => setMainImage(img)}
-                  className={`relative w-full aspect-square rounded-full overflow-hidden ring-2 transition-all duration-200 ${
+                  className={`relative w-full aspect-square rounded-full overflow-hidden ring-2 transition-all duration-200 cursor-pointer ${
                     img === mainImage
                       ? "ring-[#FF69B4]"
                       : "ring-transparent hover:ring-[#FFB6C1]"
@@ -122,7 +121,7 @@ export default function DessertDetailsPage() {
                 ].map((size, i) => (
                   <div
                     key={i}
-                    className="flex flex-col items-center gap-2 rounded-2xl py-4 px-6 border-none bg-[#FFF8DC] hover:bg-white hover:scale-105 hover:border-2 hover:border-[#FF69B4] transition-all duration-300"
+                    className="flex flex-col items-center gap-2 rounded-2xl py-4 px-6 border-none bg-[#FFF8DC] hover:scale-105 hover:border-2 hover:border-[#FF69B4] transition-all duration-300 cursor-pointer"
                   >
                     <span className="text-pink-500">{size.label}</span>
                     <span>{size.price}</span>
@@ -147,21 +146,21 @@ export default function DessertDetailsPage() {
                 <div className="flex items-center gap-2 bg-[#FFF8DC] px-4 py-2 rounded-full">
                   <button
                     onClick={decrement}
-                    className="bg-white p-2 rounded-full hover:bg-[#FFB6C1] transition"
+                    className="bg-white p-2 rounded-full hover:bg-[#FFB6C1] transition cursor-pointer"
                   >
                     <Minus size={16} />
                   </button>
                   <span className="text-lg font-bold px-2">{quantity}</span>
                   <button
                     onClick={increment}
-                    className="bg-white p-2 rounded-full hover:bg-[#FFB6C1] transition"
+                    className="bg-white p-2 rounded-full hover:bg-[#FFB6C1] transition cursor-pointer"
                   >
                     <Plus size={16} />
                   </button>
                 </div>
 
                 {/* Panier */}
-                <Button className="flex-1 bg-gradient-to-r from-[#FF69B4] to-[#FF4D6D] text-white py-4 px-6 rounded-[15px] text-lg font-bold hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(255,105,180,0.4)] transition-all duration-300">
+                <Button className="flex-1 bg-gradient-to-r from-[#FF69B4] to-[#FF4D6D] text-white py-4 px-6 rounded-[15px] text-lg font-bold hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(255,105,180,0.4)] transition-all duration-300 cursor-pointer">
                   <ShoppingBag className="h-12 w-12"/> Ajouter au panier - {quantity * 32.9} €
                 </Button>
 

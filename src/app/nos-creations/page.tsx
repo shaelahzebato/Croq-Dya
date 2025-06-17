@@ -539,6 +539,7 @@ export default function MenuPage() {
             <div className="flex items-center gap-4 bg-white p-4 rounded-2xl border-2 shadow-lg transition-all duration-300 searchbar-input">
               <Search className="w-6 h-6 flex-shrink-0 text-primary" />
               <input
+                aria-label='Barre de rechercher de dessert'
                 type="search"
                 placeholder="Rechercher un dessert, un parfum..."
                 className="w-full text-sm sm:text-base outline-none font-quicksand text-secondary placeholder-accent"
@@ -553,12 +554,13 @@ export default function MenuPage() {
               {["Chocolat", "Fraise", "Vanille", "Sans gluten", "Vegan"].map((tag) => (
                 <span 
                   key={tag} 
-                  className="search-tag px-3 py-1 text-white text-xs rounded-full cursor-pointer transition-colors"
+                  className="bg-[#FF69B4] px-3 py-1 quicksand-normal text-white text-xs rounded-full cursor-pointer transition-colors"
                 >
                   {tag}
                 </span>
               ))}
             </div>
+
           </div>
         </Card>
       </section>

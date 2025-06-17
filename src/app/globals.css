@@ -87,7 +87,7 @@ body.quicksand-light {
 
 .placeholder-accent::placeholder {
   color: var(--rose-bonbon);
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .searchbar-card {
@@ -103,10 +103,6 @@ body.quicksand-light {
   box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
 }
 
-.search-tag {
-  background-color: var(--rose-bonbon);
-  color: var(--rose-bonbon);
-}
 
 .story-highlight {
   background: linear-gradient(45deg, rgba(255, 105, 180, 0.1), rgba(221, 160, 221, 0.1));

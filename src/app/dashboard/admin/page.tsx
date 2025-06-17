@@ -217,6 +217,242 @@ function RecentActivity() {
 
 
 
+//R E C E N T
+// 'use client'
+
+// import React, { useState } from 'react'
+// import Link from 'next/link'
+// import CroqDyaLogo from '@/components/CroqDyaLogo'
+// import RecentOrders from '@/components/RecentOrders'
+// import { Button } from '@/components/ui/button'
+// import {
+//   LayoutDashboard,
+//   ShoppingBag,
+//   ChefHat,
+//   Users,
+//   BarChart2,
+//   Settings,
+//   Plus,
+//   FileBarChart,
+//   PackageCheck,
+//   UserPlus,
+//   Menu,
+//   X
+// } from 'lucide-react'
+
+// export default function AdminDashboardPage() {
+//   const [sidebarOpen, setSidebarOpen] = useState(false)
+
+//   return (
+//     <main className="bg-gradient-cream min-h-screen flex">
+//       {/* Overlay mobile */}
+//       {sidebarOpen && (
+//         <div
+//           className="fixed inset-0 bg-black/50 z-10 lg:hidden"
+//           onClick={() => setSidebarOpen(false)}
+//         />
+//       )}
+
+//       {/* Sidebar */}
+//       <nav
+//         className={`
+//           fixed lg:relative top-0 left-0 z-20 h-full w-64 bg-[#FF69B4] text-white p-6
+//           transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
+//           transition-transform duration-200 ease-in-out lg:translate-x-0
+//         `}
+//       >
+//         <div className="flex items-center justify-between lg:hidden mb-4">
+//           <CroqDyaLogo />
+//           <X onClick={() => setSidebarOpen(false)} size={24} className="cursor-pointer" />
+//         </div>
+//         <div className="space-y-6">
+//           <CroqDyaLogo className="mx-auto hidden lg:block" />
+//           <h2 className="text-center p-2 rounded-full bg-pink-200 text-[#8B4513]">Admin</h2>
+//           <div className="h-[2px] bg-[#fccce4] my-4 lg:my-10" />
+//           <ul className="space-y-3">
+//             <SidebarLink href="/dashboard" label="Dashboard" icon={LayoutDashboard} active />
+//             <SidebarLink href="/commandes" label="Commandes" icon={ShoppingBag} />
+//             <SidebarLink href="/produits" label="Produits" icon={ChefHat} />
+//             <SidebarLink href="/clients" label="Clients" icon={Users} />
+//             <SidebarLink href="/analytics" label="Analytics" icon={BarChart2} />
+//             <SidebarLink href="/paramètres" label="Paramètres" icon={Settings} />
+//           </ul>
+//         </div>
+//       </nav>
+
+//       <div className="flex-1 flex flex-col lg:pl-64">
+//         {/* Header */}
+//         <header className="flex items-center justify-between bg-white p-4 lg:p-6 shadow-sm">
+//           <div className="flex items-center gap-4">
+//             <button
+//               className="lg:hidden p-2 rounded-md hover:bg-gray-200"
+//               onClick={() => setSidebarOpen(true)}
+//             >
+//               <Menu size={24} />
+//             </button>
+//             <h1 className="dancing_script text-2xl sm:text-3xl lg:text-4xl text-[#FF69B4] font-bold">
+//               Dashboard Admin
+//             </h1>
+//           </div>
+//           <div className="flex gap-2">
+//             <Button className="bg-green-600 hover:bg-green-700 flex items-center gap-2">
+//               <Plus /> Produit
+//             </Button>
+//             <Link
+//               href="/"
+//               className="bg-[#FF69B4] hover:bg-pink-500 text-white py-2 px-4 rounded-md flex items-center gap-2"
+//             >
+//               <FileBarChart /> Rapport
+//             </Link>
+//           </div>
+//         </header>
+
+//         {/* Statistiques */}
+//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 lg:p-6">
+//           <StatCard title="Commandes Aujourd'hui" value="24" info="+12% vs hier" />
+//           <StatCard title="Chiffre d'Affaires" value="1 847 €" info="+8% vs hier" />
+//           <StatCard title="Nouveaux Clients" value="7" info="-2% vs hier" />
+//           <StatCard title="Produits Vendus" value="42" info="+15% vs hier" />
+//         </div>
+
+//         {/* Contenu principal */}
+//         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 p-4 lg:p-6">
+//           <div className="lg:col-span-3">
+//             <RecentOrders />
+//           </div>
+//           <aside className="lg:col-span-2 space-y-4">
+//             <div className="bg-white rounded-xl p-4 lg:p-6 space-y-4 shadow-sm">
+//               <h3 className="dancing_script text-xl lg:text-2xl text-[#FF69B4] font-bold">
+//                 Actions Rapides
+//               </h3>
+//               <QuickAction
+//                 icon={<Plus size={18} className="text-white" />}
+//                 bg="bg-green-600"
+//                 title="Ajouter un Produit"
+//                 description="Créer une pâtisserie"
+//               />
+//               <QuickAction
+//                 icon={<PackageCheck size={18} className="text-white" />}
+//                 bg="bg-orange-500"
+//                 title="Gérer les Commandes"
+//                 description="Voir toutes les commandes"
+//               />
+//               <QuickAction
+//                 icon={<UserPlus size={18} className="text-white" />}
+//                 bg="bg-pink-500"
+//                 title="Clients Inscrits"
+//                 description="Gérer la base clients"
+//               />
+//               <QuickAction
+//                 icon={<Settings size={18} className="text-white" />}
+//                 bg="bg-[#8B4513]"
+//                 title="Paramètres"
+//                 description="Configuration boutique"
+//               />
+//             </div>
+//           </aside>
+//         </div>
+
+//         {/* Activité récente */}
+//         <div className="p-4 lg:p-6">
+//           <div className="bg-white rounded-xl p-4 lg:p-6 shadow-sm">
+//             <h2 className="dancing_script text-lg lg:text-2xl text-[#FF69B4] mb-4">Activité Récente</h2>
+//             <RecentActivity />
+//           </div>
+//         </div>
+//       </div>
+//     </main>
+//   )
+// }
+
+// // === Composants ===
+
+// function SidebarLink({
+//   href,
+//   label,
+//   icon: Icon,
+//   active
+// }: {
+//   href: string
+//   label: string
+//   icon: React.ElementType
+//   active?: boolean
+// }) {
+//   return (
+//     <li>
+//       <Link
+//         href={href}
+//         className={`flex items-center gap-3 p-3 rounded-lg ${
+//           active ? 'bg-pink-200 text-[#8B4513] font-semibold' : 'hover:bg-pink-200'
+//         }`}
+//       >
+//         <Icon size={20} />
+//         <span>{label}</span>
+//       </Link>
+//     </li>
+//   )
+// }
+
+// function StatCard({ title, value, info }: { title: string; value: string; info: string }) {
+//   return (
+//     <div className="border-l-4 border-pink-500 bg-white rounded-lg p-4 lg:p-6 shadow-sm">
+//       <span className="uppercase text-xs lg:text-sm text-[#8B4513] quicksand">{title}</span>
+//       <h3 className="text-xl lg:text-2xl text-[#FF69B4] font-bold">{value}</h3>
+//       <small className="text-sm text-gray-500">{info}</small>
+//     </div>
+//   )
+// }
+
+// function QuickAction({
+//   icon,
+//   bg,
+//   title,
+//   description
+// }: {
+//   icon: React.ReactNode
+//   bg: string
+//   title: string
+//   description: string
+// }) {
+//   return (
+//     <div className="hover:border-2 bg-[#FFF8DC] hover:border-pink-500 flex items-center gap-4 rounded-lg p-3 lg:p-4 transition-all">
+//       <div className={`h-10 w-10 rounded-full flex items-center justify-center ${bg}`}>
+//         {icon}
+//       </div>
+//       <div>
+//         <h4 className="text-sm font-semibold text-[#8B4513]">{title}</h4>
+//         <p className="text-xs text-[#8B4513]">{description}</p>
+//       </div>
+//     </div>
+//   )
+// }
+
+// function RecentActivity() {
+//   const activities = [
+//     { title: 'Nouvelle commande reçue de Marie Dubois', time: 'Il y a 5 minutes' },
+//     { title: 'Commande #CDY‑154 prête pour retrait', time: 'Il y a 15 minutes' },
+//     { title: 'Nouveau client : Alexandre Petit', time: 'Il y a 32 minutes' }
+//   ]
+
+//   return (
+//     <div className="flex flex-col divide-y divide-[#f8d0b3]">
+//       {activities.map((act, i) => (
+//         <div key={i} className="flex items-center gap-3 py-3">
+//           <div className="h-10 w-10 rounded-full bg-pink-400 flex items-center justify-center">
+//             <PackageCheck className="text-white" size={16} />
+//           </div>
+//           <div className="flex-1">
+//             <p className="text-[#8B4513] quicksand font-medium">{act.title}</p>
+//             <small className="text-xs text-[#8B4513]">{act.time}</small>
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   )
+// }
+//R E C E N T FIN
+
+
 
 
 
