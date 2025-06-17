@@ -39,11 +39,11 @@ export default function Sidebar() {
         {/* Burger button - mobile only */}
         <Button
           variant="ghost"
-          size="icon"
+        //   size="icon"
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden text-white"
         >
-          {isOpen ? <X size={4} /> : <Menu size={4} />}
+          {isOpen ? <X size={44} /> : <Menu size={44} />}
         </Button>
       </div>
 
