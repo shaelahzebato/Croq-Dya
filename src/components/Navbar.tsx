@@ -64,7 +64,7 @@ export default function Navbar() {
             <ShoppingBag className='w-5 h-5 text-[#8B4513]' />
             <span className='absolute -top-2 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold'>3</span>
           </Link>
-          <Button onClick={() => setIsMenuOpen(!isMenuOpen)} className='p-2 text-[#8B4513] hover:text-pink-600 cursor-pointer'>
+          <Button onClick={() => setIsMenuOpen(!isMenuOpen)} className='p-2 text-[#8B4513] transition-colors hover:text-pink-600 cursor-pointer'>
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </Button>
         </div>
