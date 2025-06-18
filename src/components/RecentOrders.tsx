@@ -13,10 +13,10 @@ type Order = {
 }
 
 const orders: Order[] = [
-  { id: "#CDY-156", client: "Marie Dubois", total: "67,80€", status: "En attente" },
-  { id: "#CDY-155", client: "Thomas Martin", total: "28,50€", status: "Confirmée" },
-  { id: "#CDY-154", client: "Sophie Laurent", total: "32,90€", status: "Prête" },
-  { id: "#CDY-153", client: "Pierre Durand", total: "49,80€", status: "Livrée" },
+  { id: "#CDY-156", client: "Joa Touré", total: "67,80€", status: "En attente" },
+  { id: "#CDY-155", client: "Arsène Coulibaly", total: "28,50€", status: "Confirmée" },
+  { id: "#CDY-154", client: "Sira Sidibé", total: "32,90€", status: "Prête" },
+  { id: "#CDY-153", client: "Christ Lael", total: "49,80€", status: "Livrée" },
 ]
 
 const statusClasses: Record<OrderStatus, string> = {
