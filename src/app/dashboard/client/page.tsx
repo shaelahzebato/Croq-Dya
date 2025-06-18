@@ -284,14 +284,14 @@ export default function DashboardUtilisateur() {
                   {recentOrders.map((order: Order) => (
                     <div key={order.id} className="bg-white rounded-xl shadow-md p-6">
                       <div className="flex items-start justify-between mb-4">
-                        <div>
+                        <div className='flex items-center'>
                           <div className="flex items-center gap-3 mb-2">
                             <h3 className="text-lg font-bold text-[#8B4513]">Commande #{order.id}</h3>
                             <StatusBadge status={order.status} />
                           </div>
                           <p className="text-gray-600 text-sm">Commandé le {order.date}</p>
                         </div>
-                        <div className="text-right flex ">
+                        <div className="text-right flex items-center">
                           <div className="text-xl font-bold text-pink-600">{order.total}€</div>
                           <div className="flex gap-2 mt-2">
                             <button className="text-sm bg-pink-100 text-pink-700 px-3 py-1 rounded-full hover:bg-pink-200">
