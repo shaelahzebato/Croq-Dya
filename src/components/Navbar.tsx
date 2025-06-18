@@ -22,8 +22,8 @@ export default function Navbar() {
 
   const linkClasses = (href: string) =>
     `${isActive(href)
-      ? 'text-pink-600 font-semibold underline underline-offset-4 decoration-4 decoration-pink-500'
-      : 'text-[#8B4513] hover:text-pink-600'} transition-colors`
+      ? 'text-pink-600 font-semibold underline underline-offset-4 decoration-2 decoration-pink-500'
+      : 'text-[#8B4513] hover:text-pink-400'} transition-colors`
 
   return (
     <header className='bg-white/95 backdrop-blur-sm shadow-lg shadow-pink-200/50 sticky top-0 z-50'>
@@ -52,7 +52,7 @@ export default function Navbar() {
             <span className='absolute -top-2 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold'>3</span>
           </Link>
           <Link href='/se-connecter'>
-            <Button className='bg-white text-pink-600 border border-pink-600 rounded-full px-6 hover:bg-pink-50 hover:scale-105 transition'>
+            <Button className='bg-white text-pink-600 border border-pink-600 rounded-full px-6 hover:bg-pink-50 hover:scale-105 transition cursor-pointer'>
               Connexion
             </Button>
           </Link>
@@ -64,9 +64,9 @@ export default function Navbar() {
             <ShoppingBag className='w-5 h-5 text-[#8B4513]' />
             <span className='absolute -top-2 -right-1 bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold'>3</span>
           </Link>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='p-2 text-[#8B4513] hover:text-pink-600'>
+          <Button onClick={() => setIsMenuOpen(!isMenuOpen)} className='p-2 text-[#8B4513] hover:text-pink-600 cursor-pointer'>
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          </Button>
         </div>
       </nav>
 
