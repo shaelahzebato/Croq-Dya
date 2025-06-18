@@ -116,7 +116,7 @@ export default function CommanderPage() {
               <h1 className="text-2xl font-bold text-[#8B4513]">Commander en ligne</h1>
               <p className="text-gray-600 text-sm">Livraison rapide • Paiement sécurisé</p>
             </div>
-            <div className="flex items-center gap-3 text-sm text-gray-600">
+            <div className="flex flex-col lg:flex-row items-center gap-3 text-sm text-gray-600">
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4 text-[#FF69B4]" />
                 <span>Prêt en 2h</span>
