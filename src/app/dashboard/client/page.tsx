@@ -265,7 +265,7 @@ export default function DashboardUtilisateur() {
               </div>
             )}
 
-            {/* Mes Commandes */}
+            {/* Mes Commandes
             {activeTab === 'orders' && (
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
@@ -329,7 +329,84 @@ export default function DashboardUtilisateur() {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
+
+            {/* Mes Commandes */}
+{activeTab === 'orders' && (
+  <div className="space-y-6">
+    {/* Header titre + filtre */}
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <h2 className="text-2xl font-bold text-[#8B4513]">Mes Commandes</h2>
+      <div className="flex gap-2">
+        <select className="border rounded-lg px-3 py-2 text-sm">
+          <option>Toutes les commandes</option>
+          <option>En cours</option>
+          <option>Livrées</option>
+          <option>Annulées</option>
+        </select>
+      </div>
+    </div>
+
+    {/* Liste des commandes */}
+    <div className="space-y-4">
+      {recentOrders.map((order: Order) => (
+        <div key={order.id} className="bg-white rounded-xl shadow-md p-6 overflow-hidden">
+          {/* En-tête de commande */}
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+            <div>
+              <div className="flex flex-wrap items-center gap-3 mb-1">
+                <h3 className="text-lg font-bold text-[#8B4513]">
+                  Commande #{order.id}
+                </h3>
+                <StatusBadge status={order.status} />
+              </div>
+              <p className="text-gray-600 text-sm">Commandé le {order.date}</p>
+            </div>
+
+            <div className="flex flex-col items-start md:items-end gap-2">
+              <div className="text-xl font-bold text-pink-600">{order.total}€</div>
+              <div className="flex flex-wrap gap-2">
+                <button className="text-sm bg-pink-100 text-pink-700 px-3 py-1 rounded-full hover:bg-pink-200 whitespace-nowrap">
+                  Détails
+                </button>
+                {order.status === "Livré" && (
+                  <button className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200 whitespace-nowrap">
+                    Recommander
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Articles */}
+          <div className="border-t pt-4">
+            <h4 className="font-medium text-[#8B4513] mb-2">Articles commandés :</h4>
+            <div className="flex flex-wrap gap-2">
+              {order.items.map((item: string, index: number) => (
+                <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Message préparation */}
+          {order.status === "En préparation" && (
+            <div className="mt-4 p-3 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-orange-600" />
+                <span className="text-sm text-orange-700">
+                  Votre commande est en cours de préparation. Prête dans 2h !
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
 
             {/* Mes Favoris */}
             {activeTab === 'favorites' && (
