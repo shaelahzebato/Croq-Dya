@@ -4,6 +4,7 @@ import {
   User, Settings, ShoppingBag, Heart, Clock, MapPin, Phone, 
   CreditCard, Bell, Edit3, ChevronRight, Award, Eye
 } from 'lucide-react';
+import Image from 'next/image';
 
 interface UserData {
   name: string;
@@ -52,8 +53,8 @@ export default function DashboardUtilisateur() {
 
   // Données utilisateur simulées
   const userData: UserData = {
-    name: "Marie Dubois",
-    email: "marie.dubois@email.com",
+    name: "Dya Croq'",
+    email: "dya@email.com",
     phone: "06 12 34 56 78",
     birthdate: "15 Mars 1990",
     address: "123 Rue de la Paix, Abidjan",
@@ -71,9 +72,9 @@ export default function DashboardUtilisateur() {
   ];
 
   const favoriteProducts: Product[] = [
-    { id: 1, name: "Fraisier Vanille", price: 32.90, image: "🍓", lastOrdered: "Il y a 5 jours" },
-    { id: 2, name: "Macarons Assortis", price: 18.90, image: "🌈", lastOrdered: "Il y a 1 semaine" },
-    { id: 3, name: "Cupcakes Caramel", price: 16.90, image: "🧁", lastOrdered: "Il y a 2 semaines" }
+    { id: 1, name: "Fraisier Vanille", price: 32.90, image: "/Delicious-berries.jpg", lastOrdered: "Il y a 5 jours" },
+    { id: 2, name: "Macarons Assortis", price: 18.90, image: "/Macaronss.jpg", lastOrdered: "Il y a 1 semaine" },
+    { id: 3, name: "Cupcakes Caramel", price: 16.90, image: "/Fiesta-cupcakes.jpg", lastOrdered: "Il y a 2 semaines" }
   ];
 
   const TabButton: React.FC<TabButtonProps> = ({ id, label, icon, isActive, onClick }) => (
@@ -219,7 +220,7 @@ export default function DashboardUtilisateur() {
                     <h3 className="text-xl font-bold text-[#8B4513]">Commandes récentes</h3>
                     <button 
                       onClick={() => setActiveTab('orders')}
-                      className="text-pink-600 hover:text-pink-700 flex items-center gap-1 text-sm"
+                      className="text-pink-600 hover:text-pink-700 flex items-center gap-1 text-sm cursor-pointer"
                     >
                       Voir tout <ChevronRight className="w-4 h-4" />
                     </button>
@@ -237,7 +238,7 @@ export default function DashboardUtilisateur() {
                         </div>
                         <div className="text-right">
                           <div className="font-bold text-[#8B4513]">{order.total}€</div>
-                          <button className="text-pink-600 text-sm hover:underline">Détails</button>
+                          <button className="text-pink-600 text-sm hover:underline cursor-pointer">Détails</button>
                         </div>
                       </div>
                     ))}
@@ -248,15 +249,15 @@ export default function DashboardUtilisateur() {
                 <div className="bg-white rounded-xl shadow-md p-6">
                   <h3 className="text-xl font-bold text-[#8B4513] mb-4">Actions rapides</h3>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <button className="p-4 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors text-center">
+                    <button className="p-4 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors text-center cursor-pointer">
                       <ShoppingBag className="w-8 h-8 text-pink-600 mx-auto mb-2" />
                       <div className="font-medium text-[#8B4513]">Nouvelle commande</div>
                     </button>
-                    <button className="p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors text-center">
+                    <button className="p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors cursor-pointer text-center">
                       <Heart className="w-8 h-8 text-purple-600 mx-auto mb-2" />
                       <div className="font-medium text-[#8B4513]">Mes favoris</div>
                     </button>
-                    <button className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors text-center">
+                    <button className="p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors text-center cursor-pointer">
                       <Phone className="w-8 h-8 text-blue-600 mx-auto mb-2" />
                       <div className="font-medium text-[#8B4513]">Nous contacter</div>
                     </button>
@@ -265,10 +266,11 @@ export default function DashboardUtilisateur() {
               </div>
             )}
 
-            {/* Mes Commandes
+            {/* Mes Commandes */}
             {activeTab === 'orders' && (
               <div className="space-y-6">
-                <div className="flex items-center justify-between">
+                {/* Header titre + filtre */}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <h2 className="text-2xl font-bold text-[#8B4513]">Mes Commandes</h2>
                   <div className="flex gap-2">
                     <select className="border rounded-lg px-3 py-2 text-sm">
@@ -280,32 +282,38 @@ export default function DashboardUtilisateur() {
                   </div>
                 </div>
 
+                {/* Liste des commandes */}
                 <div className="space-y-4">
                   {recentOrders.map((order: Order) => (
-                    <div key={order.id} className="bg-white rounded-xl shadow-md p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className='flex items-center'>
-                          <div className="flex items-center gap-3 mb-2">
-                            <h3 className="text-lg font-bold text-[#8B4513]">Commande #{order.id}</h3>
+                    <div key={order.id} className="bg-white rounded-xl shadow-md p-6 overflow-hidden">
+                      {/* En-tête de commande */}
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                        <div>
+                          <div className="flex flex-wrap items-center gap-3 mb-1">
+                            <h3 className="text-lg font-bold text-[#8B4513]">
+                              Commande #{order.id}
+                            </h3>
                             <StatusBadge status={order.status} />
                           </div>
                           <p className="text-gray-600 text-sm">Commandé le {order.date}</p>
                         </div>
-                        <div className="text-right flex items-center">
+
+                        <div className="flex flex-col items-start md:items-end gap-2">
                           <div className="text-xl font-bold text-pink-600">{order.total}€</div>
-                          <div className="flex gap-2 mt-2">
-                            <button className="text-sm bg-pink-100 text-pink-700 px-3 py-1 rounded-full hover:bg-pink-200">
+                          <div className="flex flex-wrap gap-2">
+                            <button className="text-sm bg-pink-100 text-pink-700 px-3 py-1 rounded-full hover:bg-pink-200 whitespace-nowrap cursor-pointer">
                               Détails
                             </button>
                             {order.status === "Livré" && (
-                              <button className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200">
+                              <button className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200 whitespace-nowrap cursor-pointer">
                                 Recommander
                               </button>
                             )}
                           </div>
                         </div>
                       </div>
-                      
+
+                      {/* Articles */}
                       <div className="border-t pt-4">
                         <h4 className="font-medium text-[#8B4513] mb-2">Articles commandés :</h4>
                         <div className="flex flex-wrap gap-2">
@@ -317,11 +325,14 @@ export default function DashboardUtilisateur() {
                         </div>
                       </div>
 
+                      {/* Message préparation */}
                       {order.status === "En préparation" && (
                         <div className="mt-4 p-3 bg-orange-50 rounded-lg border-l-4 border-orange-400">
                           <div className="flex items-center gap-2">
                             <Clock className="w-4 h-4 text-orange-600" />
-                            <span className="text-sm text-orange-700">Votre commande est en cours de préparation. Prête dans 2h !</span>
+                            <span className="text-sm text-orange-700">
+                              Votre commande est en cours de préparation. Prête dans 2h !
+                            </span>
                           </div>
                         </div>
                       )}
@@ -329,83 +340,7 @@ export default function DashboardUtilisateur() {
                   ))}
                 </div>
               </div>
-            )} */}
-
-            {/* Mes Commandes */}
-{activeTab === 'orders' && (
-  <div className="space-y-6">
-    {/* Header titre + filtre */}
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-      <h2 className="text-2xl font-bold text-[#8B4513]">Mes Commandes</h2>
-      <div className="flex gap-2">
-        <select className="border rounded-lg px-3 py-2 text-sm">
-          <option>Toutes les commandes</option>
-          <option>En cours</option>
-          <option>Livrées</option>
-          <option>Annulées</option>
-        </select>
-      </div>
-    </div>
-
-    {/* Liste des commandes */}
-    <div className="space-y-4">
-      {recentOrders.map((order: Order) => (
-        <div key={order.id} className="bg-white rounded-xl shadow-md p-6 overflow-hidden">
-          {/* En-tête de commande */}
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-            <div>
-              <div className="flex flex-wrap items-center gap-3 mb-1">
-                <h3 className="text-lg font-bold text-[#8B4513]">
-                  Commande #{order.id}
-                </h3>
-                <StatusBadge status={order.status} />
-              </div>
-              <p className="text-gray-600 text-sm">Commandé le {order.date}</p>
-            </div>
-
-            <div className="flex flex-col items-start md:items-end gap-2">
-              <div className="text-xl font-bold text-pink-600">{order.total}€</div>
-              <div className="flex flex-wrap gap-2">
-                <button className="text-sm bg-pink-100 text-pink-700 px-3 py-1 rounded-full hover:bg-pink-200 whitespace-nowrap">
-                  Détails
-                </button>
-                {order.status === "Livré" && (
-                  <button className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200 whitespace-nowrap">
-                    Recommander
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Articles */}
-          <div className="border-t pt-4">
-            <h4 className="font-medium text-[#8B4513] mb-2">Articles commandés :</h4>
-            <div className="flex flex-wrap gap-2">
-              {order.items.map((item: string, index: number) => (
-                <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Message préparation */}
-          {order.status === "En préparation" && (
-            <div className="mt-4 p-3 bg-orange-50 rounded-lg border-l-4 border-orange-400">
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-orange-600" />
-                <span className="text-sm text-orange-700">
-                  Votre commande est en cours de préparation. Prête dans 2h !
-                </span>
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+            )}
 
 
             {/* Mes Favoris */}
@@ -421,23 +356,31 @@ export default function DashboardUtilisateur() {
                     <div key={product.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all">
                       <div className="p-6">
                         <div className="text-center mb-4">
-                          <span className="text-6xl block mb-2">{product.image}</span>
+                          <div className="relative mx-auto w-30 h-30 mb-4 rounded-full overflow-hidden border border-pink-100 shadow-sm">
+                            <Image
+                              src={product.image}
+                              alt={product.name}
+                              fill
+                              className="object-cover"
+                              priority
+                            />
+                          </div>
                           <h3 className="font-bold text-[#8B4513] text-lg">{product.name}</h3>
                           <p className="text-gray-600 text-sm">Dernière commande : {product.lastOrdered}</p>
                         </div>
                         
                         <div className="flex items-center justify-between mb-4">
                           <span className="text-xl font-bold text-pink-600">{product.price}€</span>
-                          <button className="text-red-500 hover:text-red-700">
+                          <button className="text-red-500 hover:text-red-700 cursor-pointer">
                             <Heart className="w-5 h-5 fill-current" />
                           </button>
                         </div>
 
                         <div className="flex gap-2">
-                          <button className="flex-1 bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors text-sm font-medium">
+                          <button className="flex-1 bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors text-sm font-medium cursor-pointer">
                             Ajouter au panier
                           </button>
-                          <button className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                          <button className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
                             <Eye className="w-4 h-4" />
                           </button>
                         </div>
@@ -505,7 +448,7 @@ export default function DashboardUtilisateur() {
                           </div>
                           <button 
                             disabled={!item.available}
-                            className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                            className={`px-4 py-2 rounded-lg text-sm font-medium cursor-pointer ${
                               item.available 
                                 ? 'bg-green-500 text-white hover:bg-green-600' 
                                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -528,7 +471,7 @@ export default function DashboardUtilisateur() {
                   <h2 className="text-2xl font-bold text-[#8B4513]">Mon Profil</h2>
                   <button 
                     onClick={() => setShowEditProfile(!showEditProfile)}
-                    className="flex items-center gap-2 bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors"
+                    className="flex items-center gap-2 bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors cursor-pointer"
                   >
                     <Edit3 className="w-4 h-4" />
                     Modifier
@@ -648,13 +591,13 @@ export default function DashboardUtilisateur() {
                           onClick={() => {
                             setShowEditProfile(false);
                           }}
-                          className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors"
+                          className="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors cursor-pointer"
                         >
                           Sauvegarder
                         </button>
                         <button 
                           onClick={() => setShowEditProfile(false)}
-                          className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+                          className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors cursor-pointer"
                         >
                           Annuler
                         </button>
