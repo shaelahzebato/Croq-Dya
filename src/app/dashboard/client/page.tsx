@@ -291,7 +291,7 @@ export default function DashboardUtilisateur() {
                           </div>
                           <p className="text-gray-600 text-sm">Commandé le {order.date}</p>
                         </div>
-                        <div className="text-right">
+                        <div className="text-right flex ">
                           <div className="text-xl font-bold text-pink-600">{order.total}€</div>
                           <div className="flex gap-2 mt-2">
                             <button className="text-sm bg-pink-100 text-pink-700 px-3 py-1 rounded-full hover:bg-pink-200">
