@@ -1,0 +1,189 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma" **--C'etait ça mon erreur, qui empêchait l'inscription--**
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CLIENT
+  ADMIN
+}
+
+enum DeliveryMode {
+  HOME_DELIVERY
+  PICK_UP
+}
+
+enum OrderStatus {
+  PENDING
+  IN_PREPARATION
+  DELIVERED
+  CANCELLED
+}
+
+model User {
+  id              String    @id @default(cuid())
+  firstName       String
+  lastName        String
+  email           String    @unique
+  password        String
+  phone           String?
+  birthDate       DateTime?
+  genre           String?
+  address         String?
+  deliveryAddress String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  role            Role      @default(CLIENT)
+  loyaltyPoints   Int       @default(0)
+
+  preferences NotificationPreferences?
+  comments    Comment[]
+  orders      Order[]
+
+  accounts Account[]
+  sessions Session[]
+}
+
+model Dessert {
+  id              String   @id @default(cuid())
+  name            String
+  description     String
+  price           Float
+  imageUrl        String
+  category        String
+  isNew           Boolean  @default(false)
+  isBestseller    Boolean  @default(false)
+  isFavorite      Boolean  @default(false)
+  preparationTime Int
+  deliveryTime    Int?
+  createdAt       DateTime @default(now())
+
+  portionOptions Portion[]
+  nutrition      Nutrition?
+  comments       Comment[]
+  orderItems     OrderItem[]
+
+  ingredients Ingredient[] // ✔ remplacé les String[]
+  allergens   Allergen[]
+  highlights  Highlight[]
+}
+
+model Portion {
+  id        String  @id @default(cuid())
+  label     String // ex: "6 parts", "entier"
+  price     Float
+  dessert   Dessert @relation(fields: [dessertId], references: [id])
+  dessertId String
+}
+
+model Ingredient {
+  id        String  @id @default(cuid())
+  name      String
+  dessert   Dessert @relation(fields: [dessertId], references: [id])
+  dessertId String
+}
+
+model Allergen {
+  id        String  @id @default(cuid())
+  name      String
+  dessert   Dessert @relation(fields: [dessertId], references: [id])
+  dessertId String
+}
+
+model Highlight {
+  id        String  @id @default(cuid())
+  name      String
+  dessert   Dessert @relation(fields: [dessertId], references: [id])
+  dessertId String
+}
+
+model Nutrition {
+  id        String  @id @default(cuid())
+  dessert   Dessert @relation(fields: [dessertId], references: [id])
+  dessertId String  @unique
+  calories  Int?
+  sugar     Float?
+  fat       Float?
+  protein   Float?
+  fiber     Float?
+}
+
+model Order {
+  id                  String       @id @default(cuid())
+  user                User         @relation(fields: [userId], references: [id])
+  userId              String
+  orderItems          OrderItem[]
+  totalPrice          Float
+  status              OrderStatus  @default(PENDING)
+  personalizedMessage String?
+  deliveryMode        DeliveryMode
+  packagingType       String? // ex: "Boîte cadeau", "Simple emballage"
+  createdAt           DateTime     @default(now())
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  dessert   Dessert @relation(fields: [dessertId], references: [id])
+  dessertId String
+  order     Order   @relation(fields: [orderId], references: [id])
+  orderId   String
+  quantity  Int
+  portion   String // ex: "6 parts"
+  unitPrice Float
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  rating    Int // ex: 5 étoiles
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  dessert   Dessert  @relation(fields: [dessertId], references: [id])
+  dessertId String
+  createdAt DateTime @default(now())
+}
+
+model NotificationPreferences {
+  id            String  @id @default(cuid())
+  user          User    @relation(fields: [userId], references: [id])
+  userId        String  @unique
+  newDessert    Boolean @default(true)
+  specialOffers Boolean @default(true)
+  orderUpdates  Boolean @default(true)
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  access_token      String?
+  token_type        String?
+  scope             String?
+  user              User    @relation(fields: [userId], references: [id])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
