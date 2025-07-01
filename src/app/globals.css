@@ -18,3 +18,59 @@
     background: linear-gradient(45deg, var(--rose-bonbon), var(--fraise));
   }
 }
+
+/* Animations pour les éléments flottants */
+@keyframes float-1 {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-15px) rotate(3deg); 
+  }
+}
+
+@keyframes float-2 {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(-5deg); 
+  }
+}
+
+@keyframes float-3 {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-12px) rotate(4deg); 
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.3) rotate(180deg); 
+    opacity: 1;
+  }
+}
+
+/* Classes utilitaires pour les animations */
+.animate-float-1 {
+  animation: float-1 4s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 5s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-3 4.5s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
