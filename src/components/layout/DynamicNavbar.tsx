@@ -1,17 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 import CroqDyaLogo from '../common/CroqDyaLogo';
 
 const DynamicNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname(); // Hook pour récupérer l'URL actuelle
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50); // Active après 50px de scroll
+      setIsScrolled(scrollTop > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -24,6 +26,14 @@ const DynamicNavbar = () => {
     { href: '/notre-histoire', label: "L'Atelier Dya" },
     { href: '/nous-contacter', label: 'Nous Contacter' },
   ];
+
+  // Fonction pour vérifier si le lien est actif
+  const isActiveLink = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
+  };
 
   return (
     <>
@@ -52,14 +62,25 @@ const DynamicNavbar = () => {
                   key={link.href}
                   href={link.href}
                   className={`
-                    font-quicksand font-medium transition-all duration-300 hover:scale-105
-                    ${isScrolled 
-                      ? 'text-chocolat hover:text-rose-bonbon' 
-                      : 'text-blanc-casse hover:text-fraise drop-shadow-md'
+                    font-quicksand font-medium transition-all duration-300 hover:scale-105 relative
+                    ${isActiveLink(link.href)
+                      ? isScrolled 
+                        ? 'text-rose-bonbon font-semibold' 
+                        : 'text-fraise font-semibold'
+                      : isScrolled 
+                        ? 'text-chocolat hover:text-rose-bonbon' 
+                        : 'text-blanc-casse hover:text-fraise drop-shadow-md'
                     }
                   `}
                 >
                   {link.label}
+                  {/* Indicateur visuel pour page active */}
+                  {isActiveLink(link.href) && (
+                    <span className={`
+                      absolute -bottom-1 left-0 right-0 h-0.5 rounded-full
+                      ${isScrolled ? 'bg-rose-bonbon' : 'bg-fraise'}
+                    `}></span>
+                  )}
                 </Link>
               ))}
             </div>
@@ -75,7 +96,9 @@ const DynamicNavbar = () => {
               `}>
                 {/* Icône panier */}
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m2.6 8L8 21h8M16 5l-4 4-4-4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m2.6 8L8 21h8" />
+                  <circle cx="9" cy="20" r="1" fill="currentColor"/>
+                  <circle cx="20" cy="20" r="1" fill="currentColor"/>
                 </svg>
                 <span className="absolute -top-1 -right-1 bg-rose-bonbon text-blanc-casse text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   3
@@ -101,9 +124,17 @@ const DynamicNavbar = () => {
                 ${isScrolled ? 'text-chocolat' : 'text-blanc-casse'}
               `}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              {isMobileMenuOpen ? (
+                // Icône croix (X) quand le menu est ouvert
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                // Icône burger quand le menu est fermé
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -116,14 +147,24 @@ const DynamicNavbar = () => {
         `}>
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                className="block font-quicksand text-chocolat hover:text-rose-bonbon transition-colors duration-200"
+                className={`
+                  block font-quicksand transition-colors duration-200 py-2 px-3 rounded-lg
+                  ${isActiveLink(link.href)
+                    ? 'text-rose-bonbon bg-rose-bonbon/10 font-semibold'
+                    : 'text-chocolat hover:text-rose-bonbon hover:bg-rose-bonbon/5'
+                  }
+                `}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
-              </a>
+                {/* Indicateur mobile pour page active */}
+                {isActiveLink(link.href) && (
+                  <span className="ml-2 text-rose-bonbon">•</span>
+                )}
+              </Link>
             ))}
             <div className="pt-3 border-t border-or-rose/20 space-y-3">
               <button className="w-full bg-rose-bonbon text-blanc-casse py-2 rounded-lg font-quicksand font-medium">
@@ -138,3 +179,8 @@ const DynamicNavbar = () => {
 };
 
 export default DynamicNavbar;
+
+
+
+
+
