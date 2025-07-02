@@ -15,7 +15,7 @@ export const LoadingComponent = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-white/90 backdrop-blur-sm z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-cream/90 backdrop-blur-sm z-50 flex items-center justify-center">
       <div className="text-center">
         <div className="text-8xl mb-6 animate-bounce">
           {dessertEmojis[currentEmoji]}

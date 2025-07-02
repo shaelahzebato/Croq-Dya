@@ -8,22 +8,20 @@ const CroqDyaFooter = () => {
 
   const footerLinks = {
     boutique: [
-      { name: 'Nos Créations', href: '/produits' },
-      { name: 'Sur-Mesure', href: '/sur-mesure' },
-      { name: 'Événements', href: '/evenements' },
-      { name: 'Ateliers', href: '/ateliers' }
+      { name: 'Nos Créations', href: '/nos-creations' },
+      { name: 'Sur-Mesure', href: '/commander' },
+      { name: 'Ateliers', href: '/notre-histoire' }
     ],
     entreprise: [
-      { name: 'Notre Histoire', href: '/about' },
-      { name: 'Notre Équipe', href: '/equipe' },
-      { name: 'Nos Valeurs', href: '/valeurs' },
-      { name: 'Carrières', href: '/carrieres' }
+      { name: 'Notre Histoire', href: '/notre-histoire' },
+      { name: 'Notre Équipe', href: '/notre-histoire' },
+      { name: 'Nos Valeurs', href: '/notre-histoire' },
     ],
     service: [
-      { name: 'Contact', href: '/contact' },
+      { name: 'Contact', href: '/nous-contacter' },
       { name: 'Livraison', href: '/livraison' },
-      { name: 'FAQ', href: '/faq' },
-      { name: 'Commandes', href: '/commandes' }
+      { name: 'FAQ', href: '/nous-contacter' },
+      { name: 'Commandes', href: '/commander' }
     ]
   };
 

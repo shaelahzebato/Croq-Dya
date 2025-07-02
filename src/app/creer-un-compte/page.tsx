@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
 import {
   Select,
   SelectContent,
@@ -21,10 +21,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { SignUpFormValues, signUpSchema } from "@/lib/validation/zodSchemas";
 import { signIn } from "next-auth/react";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function CreerUnComptePage() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
@@ -54,7 +56,6 @@ export default function CreerUnComptePage() {
 
   return (
     <main className="bg-cream min-h-screen">
-      
       {/* Breadcrumb */}
       <div className="bg-vanille/30 border-b border-or-rose/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
@@ -66,32 +67,54 @@ export default function CreerUnComptePage() {
               Accueil
             </Link>
             <span className="text-chocolat/40">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </span>
-            <span className="text-rose-bonbon font-medium">Créer un compte</span>
+            <span className="text-rose-bonbon font-medium">
+              Créer un compte
+            </span>
           </nav>
         </div>
       </div>
 
       {/* Contenu principal */}
       <div className="flex items-center justify-center py-8 sm:py-16 px-4 relative overflow-hidden min-h-[calc(100vh-80px)]">
-        
         {/* Éléments flottants - Style CroqDya */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-20 left-8 sm:left-16 text-3xl sm:text-4xl opacity-30 animate-float-1">🎂</div>
-          <div className="absolute top-32 right-8 sm:right-20 text-2xl sm:text-3xl opacity-30 animate-float-2">✨</div>
-          <div className="absolute bottom-32 left-8 sm:left-24 text-2xl sm:text-3xl opacity-30 animate-float-3">🍪</div>
-          <div className="absolute bottom-20 right-8 sm:right-16 text-xl sm:text-2xl opacity-30 animate-sparkle">💕</div>
-          <div className="absolute top-1/2 left-4 sm:left-10 text-xl sm:text-2xl opacity-20 animate-float-1">🧁</div>
-          <div className="absolute top-1/3 right-12 sm:right-32 text-xl sm:text-2xl opacity-20 animate-float-2">🍰</div>
+          <div className="absolute top-20 left-8 sm:left-16 text-3xl sm:text-4xl opacity-30 animate-float-1">
+            🎂
+          </div>
+          <div className="absolute top-32 right-8 sm:right-20 text-2xl sm:text-3xl opacity-30 animate-float-2">
+            ✨
+          </div>
+          <div className="absolute bottom-32 left-8 sm:left-24 text-2xl sm:text-3xl opacity-30 animate-float-3">
+            🍪
+          </div>
+          <div className="absolute bottom-20 right-8 sm:right-16 text-xl sm:text-2xl opacity-30 animate-sparkle">
+            💕
+          </div>
+          <div className="absolute top-1/2 left-4 sm:left-10 text-xl sm:text-2xl opacity-20 animate-float-1">
+            🧁
+          </div>
+          <div className="absolute top-1/3 right-12 sm:right-32 text-xl sm:text-2xl opacity-20 animate-float-2">
+            🍰
+          </div>
         </div>
 
         {/* Carte d'inscription */}
         <section className="relative z-10 w-full max-w-lg sm:max-w-2xl bg-blanc-casse rounded-2xl shadow-xl overflow-hidden border border-or-rose/20">
           <div className="p-6 sm:p-10 space-y-6 sm:space-y-8">
-            
             {/* Illustration avec ligne décorative */}
             <div className="text-center space-y-4">
               <div className="text-5xl sm:text-6xl">🎂</div>
@@ -109,8 +132,10 @@ export default function CreerUnComptePage() {
             </div>
 
             {/* Formulaire */}
-            <form className="space-y-5 sm:space-y-6" onSubmit={handleSubmit(onSubmit)}>
-              
+            <form
+              className="space-y-5 sm:space-y-6"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               {/* Section title */}
               <div className="border-b border-or-rose/20 pb-3">
                 <h2 className="text-lg sm:text-xl text-rose-bonbon font-quicksand font-semibold">
@@ -121,7 +146,10 @@ export default function CreerUnComptePage() {
               {/* Nom et Prénom */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="nom" className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base">
+                  <label
+                    htmlFor="nom"
+                    className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base"
+                  >
                     Nom
                     <span className="text-rose-bonbon ml-1">*</span>
                   </label>
@@ -133,12 +161,17 @@ export default function CreerUnComptePage() {
                     className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand placeholder-chocolat/50 text-sm sm:text-base"
                   />
                   {errors.nom && (
-                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">{errors.nom.message}</p>
+                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">
+                      {errors.nom.message}
+                    </p>
                   )}
                 </div>
-                
+
                 <div className="space-y-2">
-                  <label htmlFor="prenom" className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base">
+                  <label
+                    htmlFor="prenom"
+                    className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base"
+                  >
                     Prénom
                     <span className="text-rose-bonbon ml-1">*</span>
                   </label>
@@ -150,7 +183,9 @@ export default function CreerUnComptePage() {
                     className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand placeholder-chocolat/50 text-sm sm:text-base"
                   />
                   {errors.prenom && (
-                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">{errors.prenom.message}</p>
+                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">
+                      {errors.prenom.message}
+                    </p>
                   )}
                 </div>
               </div>
@@ -158,7 +193,10 @@ export default function CreerUnComptePage() {
               {/* Email et Téléphone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base">
+                  <label
+                    htmlFor="email"
+                    className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base"
+                  >
                     Adresse email
                     <span className="text-rose-bonbon ml-1">*</span>
                   </label>
@@ -170,12 +208,17 @@ export default function CreerUnComptePage() {
                     className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand placeholder-chocolat/50 text-sm sm:text-base"
                   />
                   {errors.email && (
-                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">{errors.email.message}</p>
+                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">
+                      {errors.email.message}
+                    </p>
                   )}
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="telephone" className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base">
+                  <label
+                    htmlFor="telephone"
+                    className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base"
+                  >
                     Téléphone
                     <span className="text-rose-bonbon ml-1">*</span>
                   </label>
@@ -187,33 +230,58 @@ export default function CreerUnComptePage() {
                     className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand placeholder-chocolat/50 text-sm sm:text-base"
                   />
                   {errors.telephone && (
-                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">{errors.telephone.message}</p>
+                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">
+                      {errors.telephone.message}
+                    </p>
                   )}
                 </div>
               </div>
 
               {/* Mot de passe */}
               <div className="space-y-2">
-                <label htmlFor="password" className="text-chocolat font-quicksand font-medium text-sm sm:text-base">
+                <label
+                  htmlFor="password"
+                  className="text-chocolat font-quicksand font-medium text-sm sm:text-base"
+                >
                   Mot de passe
                   <span className="text-rose-bonbon ml-1">*</span>
                 </label>
-                <input
-                  id="password"
-                  type="password"
-                  {...register("password")}
-                  placeholder="••••••••"
-                  className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand placeholder-chocolat/50 text-sm sm:text-base"
-                />
+                <div className="relative">
+                  <input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    {...register("password")}
+                    placeholder="••••••••"
+                    className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand placeholder-chocolat/50 text-sm sm:text-base"
+                    required
+                    autoComplete="current-password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-chocolat/50 hover:text-chocolat transition-colors"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-5 w-5" />
+                    ) : (
+                      <Eye className="h-5 w-5" />
+                    )}
+                  </button>
+                </div>
                 {errors.password && (
-                  <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">{errors.password.message}</p>
+                  <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">
+                    {errors.password.message}
+                  </p>
                 )}
               </div>
 
               {/* Date de naissance et Genre */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="date" className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base">
+                  <label
+                    htmlFor="date"
+                    className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base"
+                  >
                     Date de naissance
                     <span className="text-rose-bonbon ml-1">*</span>
                   </label>
@@ -221,15 +289,20 @@ export default function CreerUnComptePage() {
                     id="date"
                     type="date"
                     {...register("date")}
-                    className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand text-sm sm:text-base"
+                    className="w-full p-3 sm:p-4 border-2 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon focus:border-rose-bonbon transition-all duration-300 font-quicksand text-sm sm:text-base text-chocolat/50"
                   />
                   {errors.date && (
-                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">{errors.date.message}</p>
+                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">
+                      {errors.date.message}
+                    </p>
                   )}
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="genre" className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base">
+                  <label
+                    htmlFor="genre"
+                    className="text-chocolat font-quicksand font-medium flex items-center text-sm sm:text-base"
+                  >
                     Genre
                     <span className="text-rose-bonbon ml-1">*</span>
                   </label>
@@ -237,8 +310,11 @@ export default function CreerUnComptePage() {
                     name="genre"
                     control={control}
                     render={({ field }) => (
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <SelectTrigger className="w-full border-2 p-3 py-6 sm:p-4 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon font-quicksand text-sm sm:text-base">
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <SelectTrigger className="w-full border-2 p-3 py-6 sm:p-4 border-or-rose/30 rounded-xl bg-vanille/30 focus:outline-none focus:ring-2 focus:ring-rose-bonbon font-quicksand text-sm sm:text-base text-chocolat/50">
                           <SelectValue placeholder="Choisir un genre" />
                         </SelectTrigger>
                         <SelectContent>
@@ -246,16 +322,28 @@ export default function CreerUnComptePage() {
                             <SelectLabel className="text-sm font-bold text-chocolat font-quicksand">
                               Genre
                             </SelectLabel>
-                            <SelectItem value="femme" className="font-quicksand hover:bg-rose-bonbon/10">
+                            <SelectItem
+                              value="femme"
+                              className="font-quicksand hover:bg-rose-bonbon/10"
+                            >
                               Femme
                             </SelectItem>
-                            <SelectItem value="homme" className="font-quicksand hover:bg-rose-bonbon/10">
+                            <SelectItem
+                              value="homme"
+                              className="font-quicksand hover:bg-rose-bonbon/10"
+                            >
                               Homme
                             </SelectItem>
-                            <SelectItem value="autre" className="font-quicksand hover:bg-rose-bonbon/10">
+                            <SelectItem
+                              value="autre"
+                              className="font-quicksand hover:bg-rose-bonbon/10"
+                            >
                               Autre
                             </SelectItem>
-                            <SelectItem value="prefere-ne-pas-dire" className="font-quicksand hover:bg-rose-bonbon/10">
+                            <SelectItem
+                              value="prefere-ne-pas-dire"
+                              className="font-quicksand hover:bg-rose-bonbon/10"
+                            >
                               Préfère ne pas dire
                             </SelectItem>
                           </SelectGroup>
@@ -264,7 +352,9 @@ export default function CreerUnComptePage() {
                     )}
                   />
                   {errors.genre && (
-                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">{errors.genre.message}</p>
+                    <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand">
+                      {errors.genre.message}
+                    </p>
                   )}
                 </div>
               </div>
@@ -272,30 +362,45 @@ export default function CreerUnComptePage() {
               {/* Message d'erreur global */}
               {error && (
                 <div className="bg-rose-bonbon/10 border border-rose-bonbon/30 rounded-lg p-3">
-                  <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand text-center">{error}</p>
+                  <p className="text-rose-bonbon text-xs sm:text-sm font-quicksand text-center">
+                    {error}
+                  </p>
                 </div>
               )}
 
               {/* Checkbox conditions */}
               <div className="space-y-3">
                 <label className="inline-flex items-start gap-3 font-quicksand text-chocolat/80 cursor-pointer text-sm">
-                  <Checkbox id="terms" className="border-or-rose data-[state=checked]:bg-rose-bonbon data-[state=checked]:border-rose-bonbon mt-0.5"/>
+                  <Checkbox
+                    id="terms"
+                    className="border-or-rose data-[state=checked]:bg-rose-bonbon data-[state=checked]:border-rose-bonbon mt-0.5"
+                  />
                   <span>
                     J'accepte les{" "}
-                    <Link href="/conditions" className="text-rose-bonbon hover:text-fraise transition-colors">
+                    <Link
+                      href="/conditions"
+                      className="text-rose-bonbon hover:text-fraise transition-colors"
+                    >
                       conditions d'utilisation
                     </Link>{" "}
                     et la{" "}
-                    <Link href="/confidentialite" className="text-rose-bonbon hover:text-fraise transition-colors">
+                    <Link
+                      href="/confidentialite"
+                      className="text-rose-bonbon hover:text-fraise transition-colors"
+                    >
                       politique de confidentialité
                     </Link>
                   </span>
                 </label>
-                
+
                 <label className="inline-flex items-start gap-3 font-quicksand text-chocolat/80 cursor-pointer text-sm">
-                  <Checkbox id="newsletter" className="border-or-rose data-[state=checked]:bg-rose-bonbon data-[state=checked]:border-rose-bonbon mt-0.5"/>
+                  <Checkbox
+                    id="newsletter"
+                    className="border-or-rose data-[state=checked]:bg-rose-bonbon data-[state=checked]:border-rose-bonbon mt-0.5"
+                  />
                   <span>
-                    Je souhaite recevoir les actualités et offres spéciales de Croq'Dya
+                    Je souhaite recevoir les actualités et offres spéciales de
+                    Croq'Dya
                   </span>
                 </label>
               </div>
@@ -323,7 +428,9 @@ export default function CreerUnComptePage() {
                   <div className="w-full border-t border-or-rose/30"></div>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="bg-blanc-casse px-4 text-chocolat/60 font-quicksand">ou continuer avec</span>
+                  <span className="bg-blanc-casse px-4 text-chocolat/60 font-quicksand">
+                    ou continuer avec
+                  </span>
                 </div>
               </div>
 
@@ -337,7 +444,7 @@ export default function CreerUnComptePage() {
                   <FcGoogle size={20} />
                   Continuer avec Google
                 </button>
-                
+
                 <button
                   onClick={() => signIn("apple")}
                   type="button"
@@ -352,8 +459,8 @@ export default function CreerUnComptePage() {
               <div className="text-center pt-4 border-t border-or-rose/20">
                 <p className="font-quicksand text-chocolat/80 text-sm sm:text-base">
                   Déjà un compte ?{" "}
-                  <Link 
-                    href="/se-connecter" 
+                  <Link
+                    href="/se-connecter"
                     className="text-rose-bonbon hover:text-fraise transition-colors duration-200 font-semibold"
                   >
                     Se connecter
