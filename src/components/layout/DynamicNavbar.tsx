@@ -13,7 +13,7 @@ const DynamicNavbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
+      setIsScrolled(scrollTop > 50); // Active après 50px de scroll
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -105,7 +105,7 @@ const DynamicNavbar = () => {
                 </span>
               </button>
               
-              <button className={`
+              <Link href="/se-connecter" className={`
                 px-4 py-2 rounded-full font-quicksand font-medium transition-all duration-300 hover:scale-105
                 ${isScrolled 
                   ? 'bg-rose-bonbon text-blanc-casse hover:bg-rose-bonbon/90' 
@@ -113,7 +113,7 @@ const DynamicNavbar = () => {
                 }
               `}>
                 Connexion
-              </button>
+              </Link>
             </div>
 
             {/* Bouton Menu Mobile */}
@@ -167,9 +167,9 @@ const DynamicNavbar = () => {
               </Link>
             ))}
             <div className="pt-3 border-t border-or-rose/20 space-y-3">
-              <button className="w-full bg-rose-bonbon text-blanc-casse py-2 rounded-lg font-quicksand font-medium">
+              <Link href="/se-connecter" className="w-full bg-rose-bonbon text-blanc-casse py-2 rounded-lg font-quicksand font-medium">
                 Connexion
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -179,8 +179,3 @@ const DynamicNavbar = () => {
 };
 
 export default DynamicNavbar;
-
-
-
-
-
